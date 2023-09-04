@@ -5,7 +5,7 @@
 </head>
 
 <body>
-  <h1>Contact Form</h1>
+  <h1>Phoebe's Info Form</h1>
 
   <form action="https://httpbin.org/get" method="get">
 
@@ -15,21 +15,33 @@
     <label for="lastName">Last Name:</label>
     <input type="text" id="lastName" name="lastName">
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"
-    pattern=".+@test\.com"
-    required>
-
     <label for="telephone">Phone Number:</label>
     <input type="tel" id="telephone" name="telephone"
     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-    <p>
-      <label for="pass">Password (8 characters minimum):</label>
-      <input type="password" id="pass" name="password" minlength="8" required />
-    </p>
 
 
-    <label for="pet-select">Choose a pet:</label>
+
+    <br><br><br><br><br>
+
+    <fieldset>
+      <legend>Choose your favorite color</legend>
+
+      <input type="radio" id="red" name="color" value="R" />
+      <label for="red">Red</label><br />
+
+      <input type="radio" id="orange" name="color" value="O" />
+      <label for="orange">Orange</label><br />
+
+      <input type="radio" id="yellow" name="color" value="Y" />
+      <label for="yellow">Yellow</label>
+    </fieldset>
+
+
+
+
+
+
+    <label for="pet-select">Where would you want to travel to?</label>
     <input type="text" name="pet-select" id="pet-select" list="pet-list">
     <datalist id="pet-list">
       <optgroup label="Mammal">
@@ -46,20 +58,7 @@
       <textarea id="comment" name="comment" rows="5" cols="33">
       </textarea>
 
-<br><br><br><br><br>
 
-<fieldset>
-  <legend>Choose your favorite color</legend>
-
-  <input type="radio" id="red" name="color" value="R" />
-  <label for="red">Red</label><br />
-
-  <input type="radio" id="orange" name="color" value="O" />
-  <label for="orange">Orange</label><br />
-
-  <input type="radio" id="yellow" name="color" value="Y" />
-  <label for="yellow">Yellow</label>
-</fieldset>
 
 <!--Buttons-->
 <input type="submit">
