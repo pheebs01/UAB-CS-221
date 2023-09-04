@@ -10,6 +10,7 @@
 <form action="https://httpbin.org/get" method="get">
 
 <fieldset>
+  <legend>Your information</legend>
   <label for="firstName">First Name:</label>
   <input type="text" id="firstName" name="firstName">
 
@@ -23,35 +24,32 @@
 
 <br><br><br>
 
-  <legend>Choose your favorite color</legend>
+  <legend>What pet would you want the most?</legend>
 
-  <input type="radio" id="red" name="color" value="R" />
-  <label for="red">Red</label><br />
+  <input type="radio" id="dog" name="pet" value="D" />
+  <label for="dog">Dog</label><br />
 
-  <input type="radio" id="orange" name="color" value="O" />
-  <label for="orange">Orange</label><br />
+  <input type="radio" id="cat" name="pet" value="C" />
+  <label for="cat">Cat</label><br />
 
-  <input type="radio" id="yellow" name="color" value="Y" />
-  <label for="yellow">Yellow</label>
+  <input type="radio" id="fish" name="pet" value="F" />
+  <label for="fish">Fish</label>
 
-  <input type="radio" id="green" name="color" value="G" />
-  <label for="green">Green</label>
 
-  <input type="radio" id="blue" name="color" value="B" />
-  <label for="blue">Blue</label>
 
-  <input type="radio" id="purple" name="color" value="I" />
-  <label for="purple">Purple</label>
-
-  <input type="radio" id="pink" name="color" value="P" />
-  <label for="pink">Pink</label>
-
-  <input type="radio" id="grey" name="color" value="E" />
-  <label for="grey">Grey</label>
-
-  <input type="radio" id="black" name="color" value="L" />
-  <label for="black">Black</label>
-
+<label for="color-select">What is your favorite color?</label>
+<input type="text" name="color-select" id="color-select" list="color-list">
+<datalist id="color-list">
+  <optgroup label="color">
+    <option value="red">
+    <option value="orange">
+    <option value="yellow">
+    <option value="green">
+    <option value="blue">
+    <option value="purple">
+    <option value="pink">
+    <option value="grey">
+    <option value="black">
 
 
 <br><br><br>
