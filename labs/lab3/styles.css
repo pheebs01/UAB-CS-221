@@ -5,6 +5,7 @@ header {
 section {
   background-color: #ffcc99;
   display: block
+  text-align: center;
   vertical-align: top;
   width: 48%;
 }
