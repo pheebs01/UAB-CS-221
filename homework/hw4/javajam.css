@@ -38,3 +38,16 @@ footer {
   margin-right: auto;
   margin-left: auto;
 }
+
+a:hover {
+  color: lightblue;
+}
+
+a:visited {
+  color: aqua;
+}
+
+
+
+
+
