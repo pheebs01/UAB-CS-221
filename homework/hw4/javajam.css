@@ -40,11 +40,11 @@ footer {
 }
 
 a:hover {
-  color: lightblue;
+  color: rgb(240, 207, 135);
 }
 
 a:visited {
-  color: aqua;
+  color: rgb(202, 157, 33);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap')
