@@ -3,15 +3,17 @@ header {
 }
 
 section {
-  background-color: #f7df90;
+  background-color: #faeec7;
   display: inline;
   text-align: center;
   vertical-align: top;
   width: 100%;
+  color: rgb(85, 69, 17);
+
 }
 
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   font-family: Arial, sans-serif;
 }
 
@@ -28,7 +30,17 @@ img {
 }
 
 h1 {
-  color: #fa44fa;
+  color: rgb(243, 205, 79);
+  text-align: center;
+}
+
+h2 {
+  color: rgb(243, 205, 79);
+  text-align: center;
+}
+
+h3 {
+  color: rgb(243, 205, 79);
   text-align: center;
 }
 
@@ -57,4 +69,8 @@ nav a:hover {
   background-color: #f7df90;
   margin-right: auto;
   margin-left: auto;
+}
+
+footer {
+  background-color: rgb(243, 205, 79);
 }
