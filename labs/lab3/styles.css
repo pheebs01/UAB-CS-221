@@ -1,5 +1,5 @@
 header {
-  background-color: rgb(248, 119, 227);
+  background-color: rgb(243, 205, 79);
 }
 
 section {
@@ -52,8 +52,8 @@ nav a:hover {
 }
 
 #wrapper {
-  width: 80%;
-  background-color: #f0abd9;
+  width: 100%;
+  background-color: #f7df90;
   margin-right: auto;
   margin-left: auto;
 }
