@@ -1,9 +1,9 @@
 header {
-  background-color: #333;
+  background-color: rgb(248, 119, 227);
 }
 
 section {
-  background-color: #ffcc99;
+  background-color: #eba4cd;
   display: inline;
   text-align: center;
   vertical-align: top;
@@ -23,32 +23,32 @@ p {
 img {
   padding: 5px;
   max-width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(238, 170, 227);
 }
 
 h1 {
-  color: #0066cc;
+  color: #fa44fa;
   text-align: center;
 }
 
 a {
-  color: #ff6600;
+  color: #bc4bd8;
   text-decoration: none;
 }
 
 a:visited {
-  color: #993366
+  color: #ec73b0
 }
 
 nav a {
-  color: #fff;
+  color: rgb(234, 203, 236);
   padding: 8px 12px;
-  background-color: #0066cc;
+  background-color: #843a86;
   text-decoration: none;
 }
 
 nav a:hover {
-  background-color: #ff6600;
+  background-color: #b672b6;
 }
 
 #wrapper {
