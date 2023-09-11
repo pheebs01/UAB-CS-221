@@ -7,7 +7,7 @@ section {
   display: block
   text-align: center;
   vertical-align: top;
-  width: 48%;
+  width: 70%;
 }
 
 
@@ -42,7 +42,7 @@ a:visited {
 
 nav a {
   color: #fff;
-  padding: 10px 15px;
+  padding: 8px 12px;
   background-color: #0066cc;
   text-decoration: none;
 }
