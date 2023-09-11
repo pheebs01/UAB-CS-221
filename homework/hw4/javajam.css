@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Lobster')
-
-
+header {
+  background-color: #D2B48C;
+  text-align: center;
+  color: #8C3826;
+}
 
 h1 {
   color: #8C3826;
   line-height: 200%;
   font-family: 'Lobster', cursive;
-  background-color: #D2B48C;
-  text-align: center;
-  color: #8C3826;
 }
 
 h2 {
