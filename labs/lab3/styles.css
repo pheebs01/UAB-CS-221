@@ -54,6 +54,9 @@ a {
 
 a:visited {
   color: #f1ce5a;
+  text-decoration: none;
+  display: block;
+  margin: auto;
 }
 
 nav a {
