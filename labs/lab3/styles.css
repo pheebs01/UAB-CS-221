@@ -1,5 +1,5 @@
 header {
-  background-color: rgb(243, 205, 79);
+  background-color: rgb(80, 64, 13);
 }
 
 section {
@@ -8,7 +8,7 @@ section {
   text-align: center;
   vertical-align: top;
   width: 100%;
-  color: rgb(85, 69, 17);
+  color: rgb(99, 81, 21);
 
 }
 
@@ -25,43 +25,43 @@ p {
 img {
   padding: 5px;
   max-width: 100%;
-  border: 1px solid rgb(238, 170, 227);
+  border: 1px solid rgb(80, 64, 13);
   display: inline;
 }
 
 h1 {
-  color: rgb(243, 205, 79);
+  color: rgb(80, 64, 13);
   text-align: center;
 }
 
 h2 {
-  color: rgb(243, 205, 79);
+  color: rgb(141, 116, 35);
   text-align: center;
 }
 
 h3 {
-  color: rgb(243, 205, 79);
+  color: rgb(185, 155, 56);
   text-align: center;
 }
 
 a {
-  color: #bc4bd8;
+  color: #e9bb24;
   text-decoration: none;
 }
 
 a:visited {
-  color: #ec73b0
+  color: #ecd073;
 }
 
 nav a {
-  color: rgb(234, 203, 236);
+  color: #dbb73e;
   padding: 8px 12px;
-  background-color: #843a86;
+  background-color: #917314;
   text-decoration: none;
 }
 
 nav a:hover {
-  background-color: #b672b6;
+  background-color: #ddc77d;
 }
 
 #wrapper {
