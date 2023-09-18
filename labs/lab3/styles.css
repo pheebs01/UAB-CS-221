@@ -50,6 +50,7 @@ a {
   text-decoration: none;
   display: block;
   margin: auto;
+  font-family: 'Courier New', Courier, monospace, serif;
 }
 
 a:visited {
@@ -57,6 +58,7 @@ a:visited {
   text-decoration: none;
   display: block;
   margin: auto;
+  font-family: 'Courier New', Courier, monospace, serif;
 }
 
 nav a {
@@ -64,6 +66,7 @@ nav a {
   padding: 8px 12px;
   background-color: #917314;
   text-decoration: none;
+  font-family: 'Courier New', Courier, monospace, serif;
 }
 
 nav a:hover {
