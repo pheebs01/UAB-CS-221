@@ -11,7 +11,7 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #f0f0f0; /* Optional background color for the body */
+  background-color: #532d9b; /* Optional background color for the body */
 }
 
 
@@ -22,7 +22,7 @@ body {
   gap: 10px; /* Adjust the gutter as needed */
   width: 300px; /* Optional width for the grid container */
   height: 300px; /* Optional height for the grid container */
-  background-color: #ffffff; /* Optional background color for the grid container */
+  background-color: #ebd50e; /* Optional background color for the grid container */
   padding: 10px; /* Optional padding for the grid container */
 }
 
@@ -36,8 +36,8 @@ body {
 }
 
 .grid-item span {
-  background-color: #3498db; /* Replace with your desired background color */
-  color: #ffffff; /* Replace with your desired font color */
+  background-color: #68b8ee; /* Replace with your desired background color */
+  color: #f11010; /* Replace with your desired font color */
   padding: 10px; /* Optional padding for grid items */
 }
 
