@@ -1,0 +1,85 @@
+header {
+  background-color: rgb(80, 64, 13);
+}
+
+section {
+  background-color: #faeec7;
+  display: inline;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+  color: rgb(99, 81, 21);
+
+}
+
+
+h1, h2, h3 {
+  font-family: "Brush Script MT", cursive;
+}
+
+p {
+  font-family: 'Courier New', Courier, monospace, serif;
+  margin: 10px;
+}
+
+img {
+  padding: 5px;
+  max-width: 100%;
+  border: 5px solid rgb(80, 64, 13);
+  display: block;
+  margin: auto;
+}
+
+h1 {
+  color: rgb(80, 64, 13);
+  text-align: center;
+}
+
+h2 {
+  color: rgb(141, 116, 35);
+  text-align: center;
+}
+
+h3 {
+  color: rgb(185, 155, 56);
+  text-align: center;
+}
+
+a {
+  color: #e9bb24;
+  text-decoration: none;
+  display: block;
+  margin: auto;
+  font-family: 'Courier New', Courier, monospace, serif;
+}
+
+a:visited {
+  color: #f1ce5a;
+  text-decoration: none;
+  display: block;
+  margin: auto;
+  font-family: 'Courier New', Courier, monospace, serif;
+}
+
+nav a {
+  color: #dbb73e;
+  padding: 8px 12px;
+  background-color: #917314;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace, serif;
+}
+
+nav a:hover {
+  background-color: #ddc77d;
+}
+
+#wrapper {
+  width: 100%;
+  background-color: #f7df90;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+footer {
+  background-color: rgb(243, 205, 79);
+}
