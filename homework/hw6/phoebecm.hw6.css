@@ -11,19 +11,19 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #b499e5; /* Optional background color for the body */
+  background-color: #124b3d; /* background color for the body */
 }
 
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-  grid-template-rows: repeat(3, 1fr);    /* Three equal rows */
-  gap: 10px; /* Adjust the gutter as needed */
-  width: 300px; /* Optional width for the grid container */
-  height: 300px; /* Optional height for the grid container */
-  background-color: #ebd50e; /* Optional background color for the grid container */
-  padding: 10px; /* Optional padding for the grid container */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(3, 1fr);    /* 3 equal rows */
+  gap: 10px; /* adjust the gutter as needed */
+  width: 300px; /* width for the grid container */
+  height: 300px; /* height for the grid container */
+  background-color: #f5ea8d; /*  background color for the grid container */
+  padding: 10px; /* padding for the grid container */
 }
 
 
@@ -36,9 +36,9 @@ body {
 }
 
 .grid-item span {
-  background-color: #68b8ee; /* Replace with your desired background color */
-  color: #f11010; /* Replace with your desired font color */
-  padding: 10px; /* Optional padding for grid items */
+  background-color: #64dabc; /* Replace with your desired background color */
+  color: #ecd823; /* Replace with your desired font color */
+  padding: 10px; /* padding for grid items */
 }
 
 
