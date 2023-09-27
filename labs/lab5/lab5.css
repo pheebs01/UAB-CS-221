@@ -159,7 +159,7 @@ textarea {
 }
 
 button {
-  background-color: #e9bb24;
+  background-color: rgb(13, 84, 71);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -185,7 +185,7 @@ button:hover {
 
 
 footer {
-  background-color: rgb(243, 205, 79);
+  background-color: rgb(13, 84, 71);
   text-align: center;
   padding: 10px;
 }
