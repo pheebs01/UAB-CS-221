@@ -1,5 +1,24 @@
+body, h1, h2, h3, p, ul, li, form {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace, serif;
+  color: rgb(99, 81, 21);
+}
+
 header {
   background-color: rgb(80, 64, 13);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+header h1 {
+  color: #fff;
+  font-family: "Brush Script MT", cursive;
 }
 
 section {
@@ -61,12 +80,18 @@ a:visited {
   font-family: 'Courier New', Courier, monospace, serif;
 }
 
+nav {
+  display: flex;
+  gap: 20px;
+}
+
 nav a {
   color: #dbb73e;
   padding: 8px 12px;
   background-color: #917314;
   text-decoration: none;
   font-family: 'Courier New', Courier, monospace, serif;
+  transition: color 0.3s;
 }
 
 nav a:hover {
@@ -80,6 +105,87 @@ nav a:hover {
   margin-left: auto;
 }
 
+.about-item {
+  margin-bottom: 20px;
+}
+
+
+
+#projects {
+  background-color: #faeec7;
+  text-align: center;
+  padding: 20px;
+}
+
+#projects p {
+  margin: 10px;
+}
+
+#projects a {
+  color: #e9bb24;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace, serif;
+}
+
+#projects a:hover {
+  color: #f1ce5a;
+}
+
+
+
+#contact {
+  background-color: #faeec7;
+  text-align: center;
+  padding: 20px;
+}
+
+form {
+  margin: 20px auto;
+  max-width: 400px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #e9bb24;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #f1ce5a;
+}
+
+
+
+.social-links a {
+  color: #e9bb24;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace, serif;
+}
+
+.social-links a:hover {
+  color: #f1ce5a;
+}
+
+
 footer {
   background-color: rgb(243, 205, 79);
+  text-align: center;
+  padding: 10px;
 }
