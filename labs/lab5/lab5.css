@@ -86,9 +86,9 @@ nav {
 }
 
 nav a {
-  color: #dbb73e;
+  color: rgb(80, 64, 13);
   padding: 8px 12px;
-  background-color: #917314;
+  background-color: #ac8b1e;
   text-decoration: none;
   font-family: 'Courier New', Courier, monospace, serif;
   transition: color 0.3s;
