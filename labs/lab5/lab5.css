@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  background-color: rgb(80, 64, 13);
+  background-color: rgb(13, 84, 71);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,9 +42,9 @@ p {
 }
 
 img {
-  padding: 5px;
+  padding: 10px;
   max-width: 100%;
-  border: 5px solid rgb(80, 64, 13);
+  border: 10px solid rgb(80, 64, 13);
   display: block;
   margin: auto;
 }
