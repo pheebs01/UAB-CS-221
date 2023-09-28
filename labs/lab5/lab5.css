@@ -17,7 +17,7 @@ header {
 }
 
 header h1 {
-  font-size: 50px;
+  font-size: 100px;
   color: #fff;
   font-family: "Brush Script MT", cursive;
 }
@@ -51,16 +51,19 @@ img {
 }
 
 h1 {
+  font-size: 75px;
   color: rgb(80, 64, 13);
   text-align: center;
 }
 
 h2 {
+  font-size: 50px;
   color: rgb(141, 116, 35);
   text-align: center;
 }
 
 h3 {
+  font-size: 35px;
   color: rgb(185, 155, 56);
   text-align: center;
 }
