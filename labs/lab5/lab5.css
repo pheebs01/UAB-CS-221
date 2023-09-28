@@ -120,9 +120,22 @@ nav a:hover {
 
 .about-item {
   margin-bottom: 20px;
-  text-align: left;
+  text-align: center;
 }
 
+
+#music {
+  border: 10px solid rgb(13, 84, 71);
+  margin: 20px;
+  max-width: 800px;
+  background-color: #faeec7;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
 
 
 #projects {
