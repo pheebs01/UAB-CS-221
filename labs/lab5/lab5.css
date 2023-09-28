@@ -81,8 +81,7 @@ a:visited {
 }
 
 nav {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  display: flex;
   gap: 20px;
 }
 
@@ -114,10 +113,14 @@ nav a:hover {
   text-align: center;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .about-item {
   margin-bottom: 20px;
+  text-align: left;
 }
 
 
