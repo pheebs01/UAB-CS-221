@@ -105,6 +105,16 @@ nav a:hover {
   margin-left: auto;
 }
 
+#about {
+  border: 2px solid rgb(13, 84, 71);
+  margin: 20px;
+  max-width: 800px;
+  background-color: #faeec7;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .about-item {
   margin-bottom: 20px;
 }
@@ -112,9 +122,13 @@ nav a:hover {
 
 
 #projects {
+  border: 2px solid rgb(13, 84, 71);
+  margin: 20px;
+  max-width: 800px;
   background-color: #faeec7;
   text-align: center;
   padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #projects p {
@@ -134,9 +148,13 @@ nav a:hover {
 
 
 #contact {
+  border: 2px solid rgb(13, 84, 71);
+  margin: 20px;
+  max-width: 800px;
   background-color: #faeec7;
   text-align: center;
   padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 form {
