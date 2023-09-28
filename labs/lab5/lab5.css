@@ -210,13 +210,13 @@ nav a:hover {
 }
 
 #projects a {
-  color: #e9bb24;
+  color: rgb(78, 63, 13);
   text-decoration: none;
   font-family: 'Courier New', Courier, monospace, serif;
 }
 
 #projects a:hover {
-  color: #f1ce5a;
+  color: rgb(114, 94, 28);
 }
 
 
@@ -280,7 +280,7 @@ button:hover {
 
 
 footer {
-  color: #e9bb24;
+  color: #eccb5d;
   background-color: rgb(13, 84, 71);
   text-align: center;
   padding: 10px;
