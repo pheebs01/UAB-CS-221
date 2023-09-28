@@ -118,7 +118,19 @@ nav a:hover {
   gap: 20px;
 }
 
-.about-item {
+.about-item1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.about-item2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.about-item3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.about-item4 {
   margin-bottom: 20px;
   text-align: center;
 }
