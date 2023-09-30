@@ -155,7 +155,7 @@ header {
 
 /* Add background images to each grid item */
 .grid-item:nth-child(1) {
-  background-image: url('image1.jpg'); /* Replace 'image1.jpg' with your image file path or URL */
+  background-image: url('me.jpg'); /* Replace 'image1.jpg' with your image file path or URL */
 }
 
 .grid-item:nth-child(2) {
