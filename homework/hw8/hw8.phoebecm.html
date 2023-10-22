@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Rewards</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+    </style>
+    <script>
+        function calculateGrade() {
+            let inputGrade = prompt("Enter the student's numeric grade:");
+            
+            if (inputGrade === null) {
+                console.log("User canceled the input.");
+            } else {
+                inputGrade = parseFloat(inputGrade);
+                
+                if (isNaN(inputGrade) || inputGrade < 0 || inputGrade > 100) {
+                    console.log("Invalid input. Please enter a numeric grade between 0 and 100.");
+                } else {
+                    let letterGrade, treat;
+
+                    if (inputGrade >= 90) {
+                        letterGrade = 'A';
+                        treat = 'Candy';
+                    } else if (inputGrade >= 80) {
+                        letterGrade = 'B';
+                        treat = 'Apple';
+                    } else if (inputGrade >= 70) {
+                        letterGrade = 'C';
+                        treat = 'Mint';
+                    } else if (inputGrade >= 60) {
+                        letterGrade = 'D';
+                        treat = 'Pencil';
+                    } else {
+                        letterGrade = 'F';
+                        treat = 'Awkward conversation with parents';
+                    }
+
+                    console.log("Grade: " + inputGrade);
+                    console.log("Letter Grade: " + letterGrade);
+                    console.log("Reward: " + treat);
+                }
+            }
+        }
+
+        calculateGrade();
+    </script>
+</head>
+<body>
+</body>
+</html>
