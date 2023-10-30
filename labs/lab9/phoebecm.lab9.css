@@ -1,0 +1,40 @@
+/* Save this as [yourBlazerID].lab9.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: cream;
+  text-align: center;
+}
+
+h1 {
+  color: orange;
+}
+
+p {
+  color: brown;
+  font-size: 16px;
+}
+
+input[type="text"] {
+  border: 2px solid brown;
+  padding: 5px;
+}
+
+.play-button {
+  background-color: peach;
+  color: brown;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.play-button:hover {
+  background-color: gold;
+  color: cream;
+}
+
+.result-text {
+  color: brown;
+  font-size: 18px;
+  margin-top: 20px;
+}
