@@ -57,4 +57,50 @@ a:visited {
   }
 }
 
+@media (min-width: 768px) {
+  body {
+      background-color: #FCEBB6;
+  }
+  header {
+      background-color: #D2B48C;
+      text-align: center;
+      color: #8C3826;
+      font-weight: bold;
+  }
+  h1 {
+      color: #8C3826;
+      line-height: 200%;
+      font-family: 'Lobster', cursive;
+      font-weight: bold;
+      font-size: large;
+  }
+  h2 {
+      color: #8C3826;
+      line-height: 100%;
+  }
+  nav {
+      text-align: center;
+      font-weight: bold;
+  }
+  footer {
+      background-color: #D2B48C;
+      font-size: 0.6em;
+      font-style: italic;
+      text-align: center;
+  }
+  #wrapper {
+      width: 80%;
+      background-color: #FEFAEB;
+      margin-right: auto;
+      margin-left: auto;
+  }
+  a:hover {
+      color: rgb(240, 207, 135);
+  }
+  a:visited {
+      color: rgb(202, 157, 33);
+  }
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap')
