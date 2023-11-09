@@ -1,13 +1,13 @@
 body {
   font-family: 'Arial', sans-serif;
   text-align: center;
-  background-color: #f7ede2; /* Cream background color */
+  background-color: #f1ddc8;
   margin: 0;
   padding: 0;
 }
 
 h1 {
-  color: #b16666; /* Brown heading color */
+  color: #643f1c;
 }
 
 .buttons {
@@ -15,21 +15,21 @@ h1 {
 }
 
 #rock {
-  background-color: #b16666; /* Brown */
-  border: 2px solid #634d4d; /* Dark Brown border */
-  color: #ffd700; /* Gold text color */
+  background-color: #daae5c;
+  border: 2px solid #635c4d;
+  color: rgb(0, 0, 0);
 }
 
 #paper {
-  background-color: #ff8c42; /* Orange */
-  border: 2px solid #b16666; /* Brown border */
-  color: #fff; /* White text color */
+  background-color: #ffc400;
+  border: 2px solid #635c4d;
+  color: rgb(0, 0, 0);
 }
 
 #scissors {
-  background-color: #ffd700; /* Gold */
-  border: 2px solid #634d4d; /* Dark Brown border */
-  color: #b16666; /* Brown text color */
+  background-color: #f3ae48;
+  border: 2px solid #635c4d;
+  color: rgb(0, 0, 0);
 }
 
 button {
@@ -42,12 +42,12 @@ button {
 }
 
 button:hover {
-  background-color: #634d4d; /* Dark Brown hover color */
-  color: #fff; /* White text color on hover */
+  background-color: #634d4d;
+  color: #fff;
 }
 
 #result {
   margin-top: 20px;
   font-size: 20px;
-  color: #b16666; /* Brown result text color */
+  color: #b16666;
 }
