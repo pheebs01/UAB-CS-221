@@ -1,10 +1,13 @@
 body {
   font-family: 'Arial', sans-serif;
   text-align: center;
+  background-color: #f7ede2; /* Cream background color */
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-  color: #333;
+  color: #634d4d; /* Dark Brown */
 }
 
 .buttons {
@@ -12,13 +15,24 @@ h1 {
 }
 
 button {
-  padding: 10px;
-  margin: 5px;
-  font-size: 16px;
+  padding: 15px;
+  margin: 10px;
+  font-size: 18px;
   cursor: pointer;
+  border: 2px solid #634d4d; /* Dark Brown border */
+  background-color: #a89284; /* Light Brown button color */
+  color: #fff; /* White text color */
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #634d4d; /* Dark Brown hover color */
+  color: #fff; /* White text color on hover */
 }
 
 #result {
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 20px;
+  color: #634d4d; /* Dark Brown result text color */
 }
