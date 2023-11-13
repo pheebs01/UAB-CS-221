@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="hangman-container">
+        <div id="hangman-figure"></div>
+        <div id="word-display"></div>
+        <div id="letters">
+            <!-- Letters will be dynamically generated here using JavaScript -->
+        </div>
+        <div id="game-info">
+            <p>Guesses: <span id="guess-count">0</span></p>
+            <p>Time: <span id="timer">0</span> seconds</p>
+        </div>
+        <button id="hint-button">Get Hint</button>
+    </div>
+
+    <script src="hangman.js"></script>
+</body>
+</html>
