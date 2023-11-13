@@ -1,5 +1,4 @@
-// This is what I have so far.
-// This is a simple example to get you started. You can expand and improve upon this.
+// This is what I have so far. I'll have an original template doc, so feel free to tweak and add more to the files.
 
 const wordCategories = ['general', 'animals', 'sports']; // Add more categories as needed
 let currentWord = '';
@@ -29,7 +28,7 @@ function startGame() {
 function getRandomWord() {
     const category = wordCategories[Math.floor(Math.random() * wordCategories.length)];
     // Logic to fetch a random word from the chosen category (you can use an API or a predefined list)
-    // For now, let's assume we have a predefined list for each category
+    // Assuming we have a predefined list for each category
     const words = {
         'general': ['example', 'hangman', 'project'],
         'animals': ['elephant', 'tiger', 'giraffe'],
@@ -51,7 +50,7 @@ function updateWordDisplay() {
 function updateHangmanFigure() {
     const hangmanFigureElement = document.getElementById('hangman-figure');
     // Logic to update the hangman figure based on hangmanFigureState
-    // (you can use CSS classes and switch classes to show different hangman figures)
+    // You can use CSS classes and switch classes to show different hangman figures
 }
 
 // Function to update the guess count
