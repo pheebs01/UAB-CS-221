@@ -14,8 +14,6 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Add these styles to your existing styles.css */
-
 #hangman-figure {
   display: flex;
   justify-content: center;
