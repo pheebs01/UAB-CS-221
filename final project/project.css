@@ -14,6 +14,8 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Add these styles to your existing styles.css */
+
 #hangman-figure {
   display: flex;
   justify-content: center;
@@ -28,14 +30,35 @@ body {
   background-color: #333;
 }
 
-/* Add more styles for different parts of the hangman figure */
 .hangman-head {
   border-radius: 50%;
+  margin-top: -10px;
 }
 
-/* Repeat similar styles for other parts like body, arms, etc. */
-
+.hangman-body {
+  width: 20px;
+  height: 60px;
 }
+
+.hangman-left-arm,
+.hangman-right-arm,
+.hangman-left-leg,
+.hangman-right-leg {
+  width: 30px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.hangman-left-arm,
+.hangman-left-leg {
+  margin-left: -5px;
+}
+
+.hangman-right-arm,
+.hangman-right-leg {
+  margin-left: 5px;
+}
+
 
 #word-display {
   margin: 20px 0;
