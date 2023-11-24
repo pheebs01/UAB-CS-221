@@ -15,7 +15,26 @@ body {
 }
 
 #hangman-figure {
-  /* Hangman figure styles go here */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 200px; /* Adjust the height as needed */
+}
+
+.hangman-part {
+  width: 20px; /* Adjust the width as needed */
+  height: 20px; /* Adjust the height as needed */
+  margin: 5px;
+  background-color: #333;
+}
+
+/* Add more styles for different parts of the hangman figure */
+.hangman-head {
+  border-radius: 50%;
+}
+
+/* Repeat similar styles for other parts like body, arms, etc. */
+
 }
 
 #word-display {

@@ -49,9 +49,17 @@ function updateWordDisplay() {
 // Function to update the hangman figure based on incorrect guesses
 function updateHangmanFigure() {
     const hangmanFigureElement = document.getElementById('hangman-figure');
-    // Logic to update the hangman figure based on hangmanFigureState
-    // You can use CSS classes and switch classes to show different hangman figures
+    hangmanFigureElement.innerHTML = '';
+
+    const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
+
+    for (let i = 0; i < hangmanFigureState; i++) {
+        const part = document.createElement('div');
+        part.classList.add('hangman-part', `hangman-${hangmanParts[i]}`);
+        hangmanFigureElement.appendChild(part);
+    }
 }
+
 
 // Function to update the guess count
 function updateGuessCount() {
@@ -78,10 +86,20 @@ function generateLetterButtons() {
 
 // Function to handle letter button clicks
 function handleLetterClick(letter) {
-    // Logic to handle letter clicks
-    // Update guessedLetters, check if the letter is in the word, update game state, etc.
-    // You can add more logic for hint button, multiplayer mode, etc.
+    if (!guessedLetters.includes(letter)) {
+        guessedLetters.push(letter);
+        if (!currentWord.includes(letter)) {
+            // Increment hangmanFigureState for incorrect guesses
+            hangmanFigureState++;
+        }
+        guessCount++;
+        updateWordDisplay();
+        updateHangmanFigure();
+        updateGuessCount();
+        // Add more logic as needed
+    }
 }
+
 
 // Initialize the game
 startGame();
