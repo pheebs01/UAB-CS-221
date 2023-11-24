@@ -61,6 +61,7 @@ function updateHangmanFigure() {
 }
 
 
+
 // Function to update the guess count
 function updateGuessCount() {
     document.getElementById('guess-count').textContent = guessCount;
