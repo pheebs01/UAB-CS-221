@@ -3,7 +3,7 @@
 const wordCategories = ['general', 'animals', 'sports']; // Add more categories as needed
 let currentWord = '';
 let guessedLetters = [];
-let hangmanFigureState = 0; // You can use this to track the hangman figure progression
+let hangmanFigureState = 0; // Use this to track the hangman figure progression
 let guessCount = 0;
 let timer = 0;
 
@@ -60,8 +60,6 @@ function updateHangmanFigure() {
     }
 }
 
-
-
 // Function to update the guess count
 function updateGuessCount() {
     document.getElementById('guess-count').textContent = guessCount;
@@ -100,7 +98,6 @@ function handleLetterClick(letter) {
         // Add more logic as needed
     }
 }
-
 
 // Initialize the game
 startGame();
