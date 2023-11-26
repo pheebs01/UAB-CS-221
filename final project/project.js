@@ -1,11 +1,16 @@
-// This is what I have so far. I'll have an original template doc, so feel free to tweak and add more to the files.
-
 const wordCategories = ['general', 'animals', 'sports']; // Add more categories as needed
 let currentWord = '';
 let guessedLetters = [];
 let hangmanFigureState = 0; // Use this to track the hangman figure progression
 let guessCount = 0;
 let timer = 0;
+
+// Hints for each category
+const hints = {
+    'general': 'A broad category',
+    'animals': 'A living organism that typically can move and can feed on organic substances',
+    'sports': 'Physical activities that involve skill and competition'
+};
 
 // Function to start a new game
 function startGame() {
@@ -96,6 +101,19 @@ function handleLetterClick(letter) {
         updateHangmanFigure();
         updateGuessCount();
         // Add more logic as needed
+    }
+}
+
+// Function to handle "Get Hint" button click
+document.getElementById('hint-button').addEventListener('click', () => getHint());
+
+// Function to get a hint for the current word's category
+function getHint() {
+    const category = wordCategories.find(cat => currentWord.includes(cat));
+    if (category) {
+        alert(`Hint: ${hints[category]}`);
+    } else {
+        alert('No hint available for this word.');
     }
 }
 
