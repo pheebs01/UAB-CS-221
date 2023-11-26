@@ -2,20 +2,39 @@
 function searchBooks() {
   const searchInput = document.getElementById('searchInput').value;
   const bookListContainer = document.getElementById('bookList');
-  
+  const loadingIndicator = document.getElementById('loadingIndicator');
+
   // Handle empty search input
   if (!searchInput) {
       alert('Please enter a title or author');
       return;
   }
 
-  // Make API request (you can replace 'YOUR_API_KEY' with your actual API key)
+  // Show loading indicator
+  loadingIndicator.style.display = 'block';
+
+  // Make API request
   const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchInput)}`;
   fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => displayBooks(data.items))
-      .catch(error => console.error('Error fetching books:', error));
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+          return response.json();
+      })
+      .then(data => {
+          // Hide loading indicator
+          loadingIndicator.style.display = 'none';
+          displayBooks(data.items);
+      })
+      .catch(error => {
+          console.error('Error fetching books:', error);
+          // Hide loading indicator
+          loadingIndicator.style.display = 'none';
+          alert('An error occurred while fetching books. Please try again.');
+      });
 }
+
 
 // Function to display books in the book list
 function displayBooks(books) {
