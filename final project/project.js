@@ -1,7 +1,7 @@
-const wordCategories = ['general', 'animals', 'sports']; // Add more categories as needed
+const wordCategories = ['general', 'animals', 'sports'];
 let currentWord = '';
 let guessedLetters = [];
-let hangmanFigureState = 0; // Use this to track the hangman figure progression
+let hangmanFigureState = 0; // To track the hangman figure progression
 let guessCount = 0;
 let timer = 0;
 
@@ -33,7 +33,7 @@ function startGame() {
 function getRandomWord() {
     const category = wordCategories[Math.floor(Math.random() * wordCategories.length)];
     // Logic to fetch a random word from the chosen category (you can use an API or a predefined list)
-    // Assuming we have a predefined list for each category
+    // Assuming there's a predefined list for each category
     const words = {
         'general': ['example', 'hangman', 'project'],
         'animals': ['elephant', 'tiger', 'giraffe'],
