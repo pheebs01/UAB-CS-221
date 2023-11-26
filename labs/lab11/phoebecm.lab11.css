@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.book {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.book:hover {
+  background-color: #f9f9f9;
+}
+
+.book-details {
+  display: none;
+  margin-top: 10px;
+}
+
+.my-bookshelf {
+  margin-top: 20px;
+}
