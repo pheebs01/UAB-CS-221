@@ -20,7 +20,7 @@ body {
 }
 
 .book {
-  border: 1px solid #e0e0e0; /* light grey */
+  border: 1px solid #e0e0e0;
   padding: 15px;
   margin-bottom: 15px;
   cursor: pointer;
@@ -36,8 +36,8 @@ body {
   display: none;
   margin-top: 10px;
   padding: 10px;
-  background-color: #fde8e8; /* rose gold */
-  border: 1px solid #f8b9b9; /* pink */
+  background-color: #fde8e8;
+  border: 1px solid #f8b9b9;
   border-radius: 5px;
 }
 
@@ -48,7 +48,7 @@ body {
 .loading {
   display: none;
   border: 6px solid #f3f3f3;
-  border-top: 6px solid #ffd700; /* gold */
+  border-top: 6px solid #ffd700;
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -58,7 +58,7 @@ body {
   left: 50%;
   margin-top: -15px;
   margin-left: -15px;
-  background-color: rgba(255, 248, 220, 0.8); /* cream */
+  background-color: rgba(255, 248, 220, 0.8);
 }
 
 @keyframes spin {
