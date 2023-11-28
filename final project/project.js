@@ -9,7 +9,8 @@ let timer = 0;
 const hints = {
     'general': 'A broad category',
     'animals': 'A living organism that typically can move and can feed on organic substances',
-    'sports': 'Physical activities that involve skill and competition'
+    'sports': 'Physical activities that involve skill and competition',
+    'fashion': 'Clothing: design, style, type, or article'
 };
 
 // Function to start a new game
@@ -38,7 +39,8 @@ function getRandomWord() {
     const words = {
         'general': ['example', 'hangman', 'project'],
         'animals': ['elephant', 'tiger', 'giraffe'],
-        'sports': ['soccer', 'basketball', 'tennis']
+        'sports': ['soccer', 'basketball', 'tennis'],
+        'fashion': ['sweater', 'argyle', 'pants', 'plaid', 'skirt']
     };
 
     const selectedWords = words[category];
