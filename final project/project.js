@@ -10,7 +10,7 @@ const hints = {
     'general': 'A broad category',
     'animals': 'A living organism that typically can move and can feed on organic substances',
     'sports': 'Physical activities that involve skill and competition',
-    'fashion': 'Clothing: design, style, type, or article'
+    'fashion': 'Clothing: design, style, type, or article; or pop culture'
 };
 
 // Function to start a new game
@@ -37,10 +37,10 @@ function getRandomWord() {
 
     // Assuming there's a predefined list for each category
     const words = {
-        'general': ['example', 'hangman', 'project'],
-        'animals': ['elephant', 'tiger', 'giraffe'],
-        'sports': ['soccer', 'basketball', 'tennis'],
-        'fashion': ['sweater', 'argyle', 'pants', 'plaid', 'skirt']
+        'general': ['example', 'hangman', 'project', 'flower','computer', 'science', 'final'],
+        'animals': ['elephant', 'tiger', 'giraffe', 'lion', 'bear', 'monkey'],
+        'sports': ['soccer', 'basketball', 'tennis', 'football', 'gymnastics'],
+        'fashion': ['sweater', 'argyle', 'pants', 'plaid', 'skirt', 'vogue']
     };
 
     const selectedWords = words[category];
@@ -59,10 +59,10 @@ function getRandomWord() {
     }
 }
 
-
 // Function to update the displayed word with guessed letters
 function updateWordDisplay() {
     const wordDisplayElement = document.getElementById('word-display');
+    console.log('Current Word:', currentWord);
     wordDisplayElement.textContent = currentWord
         .split('')
         .map(letter => (guessedLetters.includes(letter) ? letter : '_'))
@@ -72,6 +72,7 @@ function updateWordDisplay() {
 // Function to update the hangman figure based on incorrect guesses
 function updateHangmanFigure() {
     const hangmanFigureElement = document.getElementById('hangman-figure');
+    console.log('Hangman Figure State:', hangmanFigureState);
     hangmanFigureElement.innerHTML = '';
 
     const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
@@ -85,11 +86,13 @@ function updateHangmanFigure() {
 
 // Function to update the guess count
 function updateGuessCount() {
+    console.log('Guess Count:', guessCount);
     document.getElementById('guess-count').textContent = guessCount;
 }
 
 // Function to update the timer
 function updateTimer() {
+    console.log('Timer:', timer);
     document.getElementById('timer').textContent = timer;
 }
 
@@ -101,13 +104,17 @@ function generateLetterButtons() {
         const letter = String.fromCharCode(i);
         const button = document.createElement('button');
         button.textContent = letter;
-        button.addEventListener('click', () => handleLetterClick(letter));
+        button.addEventListener('click', () => {
+            console.log('Clicked letter button:', letter);
+            handleLetterClick(letter);
+        });
         lettersElement.appendChild(button);
     }
 }
 
 // Function to handle letter button clicks
 function handleLetterClick(letter) {
+    console.log('Clicked letter:', letter);
     if (!guessedLetters.includes(letter)) {
         guessedLetters.push(letter);
         if (!currentWord.includes(letter)) {
