@@ -32,15 +32,31 @@ function startGame() {
 // Function to get a random word from the selected category
 function getRandomWord() {
     const category = wordCategories[Math.floor(Math.random() * wordCategories.length)];
-    // Logic to fetch a random word from the chosen category (you can use an API or a predefined list)
+    console.log('Selected category:', category);
+
     // Assuming there's a predefined list for each category
     const words = {
         'general': ['example', 'hangman', 'project'],
         'animals': ['elephant', 'tiger', 'giraffe'],
         'sports': ['soccer', 'basketball', 'tennis']
     };
-    return words[category][Math.floor(Math.random() * words[category].length)];
+
+    const selectedWords = words[category];
+    console.log('Words for the category:', selectedWords);
+
+    // Check if there are words in the selected category
+    if (selectedWords && selectedWords.length > 0) {
+        // Return a random word from the chosen category
+        const randomIndex = Math.floor(Math.random() * selectedWords.length);
+        const randomWord = selectedWords[randomIndex];
+        console.log('Selected word:', randomWord);
+        return randomWord;
+    } else {
+        console.error('No words found for the selected category.');
+        return ''; // Return an empty string if no words are found
+    }
 }
+
 
 // Function to update the displayed word with guessed letters
 function updateWordDisplay() {
