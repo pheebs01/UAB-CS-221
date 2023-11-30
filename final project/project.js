@@ -132,15 +132,19 @@ function handleLetterClick(letter) {
 // Function to handle "Get Hint" button click
 document.getElementById('hint-button').addEventListener('click', () => getHint());
 
+// Function to handle "Get Hint" button click
+document.getElementById('hint-button').addEventListener('click', () => getHint());
+
 // Function to get a hint for the current word's category
 function getHint() {
     const category = wordCategories.find(cat => currentWord.includes(cat));
-    if (category) {
+    if (category && hints.hasOwnProperty(category)) {
         alert(`Hint: ${hints[category]}`);
     } else {
         alert('No hint available for this word.');
     }
 }
+
 
 // Initialize the game
 startGame();
