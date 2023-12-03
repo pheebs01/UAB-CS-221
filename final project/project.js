@@ -138,6 +138,7 @@ function updateTimer() {
 function generateLetterButtons() {
     const lettersElement = document.getElementById('letters');
     lettersElement.innerHTML = '';
+
     for (let i = 65; i <= 90; i++) {
         const letter = String.fromCharCode(i);
         const button = document.createElement('button');
@@ -145,10 +146,12 @@ function generateLetterButtons() {
         button.addEventListener('click', () => {
             console.log('Clicked letter button:', letter);
             handleLetterClick(letter);
+            button.disabled = true; // Disable the button after it's clicked
         });
         lettersElement.appendChild(button);
     }
 }
+
 
 // Define hangmanParts outside of handleLetterClick
 const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
