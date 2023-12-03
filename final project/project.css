@@ -14,8 +14,8 @@ body {
 
 #hangman-figure {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
   height: 200px;
 }
 
@@ -28,33 +28,48 @@ body {
 
 .hangman-head {
   border-radius: 50%;
-  margin-top: -30px; /* Adjusted for better positioning */
+  margin-top: -10px;
   background-color: #C79B90; /* Head color */
 }
 
 .hangman-body {
   width: 20px;
-  height: 80px; /* Adjusted for better positioning */
+  height: 60px;
   background-color: #9E7E45; /* Body color */
 }
 
 .hangman-left-arm,
-.hangman-right-arm,
-.hangman-left-leg,
-.hangman-right-leg {
+.hangman-right-arm {
   width: 5px;
-  height: 30px;
+  height: 40px;
   background-color: #333; /* Limb color */
 }
 
-.hangman-left-arm,
-.hangman-left-leg {
-  margin-left: -5px;
+.hangman-left-arm {
+  margin-left: -10px;
+  transform: rotate(45deg);
 }
 
-.hangman-right-arm,
+.hangman-right-arm {
+  margin-left: 5px;
+  transform: rotate(-45deg);
+}
+
+.hangman-left-leg,
+.hangman-right-leg {
+  width: 5px;
+  height: 40px;
+  background-color: #333; /* Limb color */
+}
+
+.hangman-left-leg {
+  margin-left: -10px;
+  transform: rotate(-45deg);
+}
+
 .hangman-right-leg {
   margin-left: 5px;
+  transform: rotate(45deg);
 }
 
 #word-display {
