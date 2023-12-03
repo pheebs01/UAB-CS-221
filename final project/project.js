@@ -37,7 +37,7 @@ function getRandomWord() {
 
     // Assuming there's a predefined list for each category
     const words = {
-        'general': ['example', 'hangman', 'project', 'flower','computer', 'science', 'final'],
+        'general': ['example', 'hangman', 'project', 'flower', 'computer', 'science', 'final'],
         'animals': ['elephant', 'tiger', 'giraffe', 'lion', 'bear', 'monkey'],
         'sports': ['soccer', 'basketball', 'tennis', 'football', 'gymnastics'],
         'fashion': ['sweater', 'argyle', 'pants', 'plaid', 'skirt', 'vogue']
@@ -132,10 +132,6 @@ function handleLetterClick(letter) {
     }
 }
 
-
-// Function to handle "Get Hint" button click
-document.getElementById('hint-button').addEventListener('click', () => getHint());
-
 // Function to handle "Get Hint" button click
 document.getElementById('hint-button').addEventListener('click', () => getHint());
 
@@ -148,7 +144,6 @@ function getHint() {
         alert('No hint available for this word.');
     }
 }
-
 
 // Initialize the game
 startGame();
