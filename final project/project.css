@@ -1,12 +1,10 @@
-/* This is what I have so far. I'll have an original template doc, so feel free to tweak and add more to the files. It's just a base outline, so y'all can add more to make it look pretty. */
-
 body {
   font-family: 'Arial', sans-serif;
   text-align: center;
 }
 
 #hangman-container {
-  max-width: 600px;
+  max-width: 700px;
   margin: 50px auto;
   padding: 20px;
   background-color: #f0f0f0;
@@ -18,12 +16,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 200px; /* Adjust the height as needed */
+  height: 200px;
 }
 
 .hangman-part {
-  width: 20px; /* Adjust the width as needed */
-  height: 20px; /* Adjust the height as needed */
+  width: 20px;
+  height: 20px;
   margin: 5px;
   background-color: #333;
 }
@@ -31,11 +29,13 @@ body {
 .hangman-head {
   border-radius: 50%;
   margin-top: -10px;
+  background-color: #C79B90; /* Head color */
 }
 
 .hangman-body {
   width: 20px;
   height: 60px;
+  background-color: #9E7E45; /* Body color */
 }
 
 .hangman-left-arm,
@@ -45,6 +45,7 @@ body {
   width: 30px;
   height: 10px;
   border-radius: 5px;
+  background-color: #F5BE00; /* Limb color */
 }
 
 .hangman-left-arm,
@@ -57,10 +58,10 @@ body {
   margin-left: 5px;
 }
 
-
 #word-display {
   margin: 20px 0;
   font-size: 24px;
+  color: #753500; /* Word display color */
 }
 
 #letters {
@@ -77,4 +78,6 @@ body {
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
+  background-color: #0C5201; /* Hint button color */
+  color: #fff; /* Text color for the hint button */
 }
