@@ -75,7 +75,7 @@ function updateWordDisplay() {
     const wordDisplayElement = document.getElementById('word-display');
 
     // Map each letter in the current word to either the letter or underscore if not guessed
-    let displayedWord = currentWord
+    displayedWord = currentWord
         .split('')
         .map(letter => (guessedLetters.includes(letter) ? letter : '_'))
         .join(' ');
@@ -83,12 +83,16 @@ function updateWordDisplay() {
     // Set the content of the HTML element to the updated word
     wordDisplayElement.textContent = displayedWord;
 
+    // Update correctLetters array with guessed letters
+    correctLetters = currentWord
+        .split('')
+        .filter(letter => guessedLetters.includes(letter));
+
     // Check if the game has been won
-    if (!displayedWord.includes('_')) {
+    if (correctLetters.length === currentWord.length) {
         displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
     }
 }
-
 
 // Update incorrectly guessed letters
 function updateIncorrectLetters() {
@@ -184,29 +188,12 @@ function handleLetterClick(letter) {
             if (hangmanFigureState === hangmanParts.length) {
                 // The hangman figure is complete
                 displayMessage('Game over - Hangman figure complete!');
-            } else if (!displayedWord.includes('_')) {
+            } else if (displayedWord === currentWord) {
                 // All letters have been guessed
                 displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
             }
         }
     }
-
-    if (currentWord.includes(letter)) {
-        // Showing all correct letters on the word display
-        [...currentWord].forEach((wordLetter, index) => {
-            if (wordLetter === letter) {
-                correctLetters.push(letter);
-            }
-        });
-        updateWordDisplay(); // Update the displayed word with the correct letters
-    } else {
-        // If clicked letter doesn't exist then update the wrongGuessCount and hangman image
-        hangmanFigureState++;
-        updateHangmanFigure();
-    }
-
-    // Disable the clicked button so the user can't click again
-    document.getElementById(letter).disabled = true;
 }
 
 // Function to handle "Get Hint" button click
