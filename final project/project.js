@@ -1,5 +1,4 @@
-// Save this content in a file named 'project.js'
-import { words, hints } from './words.js';
+import { words, hints } from 'list.js';
 
 const wordCategories = ['general', 'animals', 'sports'];
 let currentWord = '';
