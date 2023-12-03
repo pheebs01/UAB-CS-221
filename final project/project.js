@@ -1,5 +1,3 @@
-import { words, hints } from 'list.js';
-
 const wordCategories = ['general', 'animals', 'sports'];
 let currentWord = '';
 let guessedLetters = [];
@@ -7,21 +5,57 @@ let hangmanFigureState = 0;
 let guessCount = 0;
 let timer = 0;
 
+// Hints for each category
+const hints = {
+    'general': 'A broad category',
+    'animals': 'A living organism that typically can move and can feed on organic substances',
+    'sports': 'Physical activities that involve skill and competition',
+    'fashion': 'Clothing: design, style, type, or article; or pop culture'
+};
+
+// Function to start a new game
+function startGame() {
+    // Reset game state
+    currentWord = getRandomWord();
+    guessedLetters = [];
+    hangmanFigureState = 0;
+    guessCount = 0;
+    timer = 0;
+
+    // Display initial UI
+    updateWordDisplay();
+    updateHangmanFigure();
+    updateGuessCount();
+    updateTimer();
+    generateLetterButtons();
+}
+
+// Assuming there's a predefined list for each category
+const words = {
+    'general': ['example', 'hangman', 'project', 'flower', 'computer', 'science', 'final'],
+    'animals': ['elephant', 'tiger', 'giraffe', 'lion', 'bear', 'monkey'],
+    'sports': ['soccer', 'basketball', 'tennis', 'football', 'gymnastics'],
+    'fashion': ['sweater', 'argyle', 'pants', 'plaid', 'skirt', 'vogue']
+};
+
 // Function to get a random word from the selected category
 function getRandomWord() {
     const category = wordCategories[Math.floor(Math.random() * wordCategories.length)];
     console.log('Selected category:', category);
 
     const selectedWords = words[category];
+    console.log('Words for the category:', selectedWords);
 
+    // Check if there are words in the selected category
     if (selectedWords && selectedWords.length > 0) {
+        // Return a random word from the chosen category
         const randomIndex = Math.floor(Math.random() * selectedWords.length);
         const randomWord = selectedWords[randomIndex];
         console.log('Selected word:', randomWord);
         return randomWord;
     } else {
         console.error('No words found for the selected category.');
-        return '';
+        return ''; // Return an empty string if no words are found
     }
 }
 
@@ -52,6 +86,7 @@ function updateWordDisplay() {
         displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
     }
 }
+
 
 // Update incorrectly guessed letters
 function updateIncorrectLetters() {
@@ -162,8 +197,7 @@ document.getElementById('hint-button').addEventListener('click', () => getHint()
 function getHint() {
     const category = wordCategories.find(cat => currentWord.includes(cat));
     if (category && hints.hasOwnProperty(category)) {
-        const hintMessage = `Hint: ${hints[category]}`;
-        displayMessage(hintMessage);
+        displayMessage(`Hint: ${hints[category]}`);
     } else {
         displayMessage('No hint available for this word.');
     }
