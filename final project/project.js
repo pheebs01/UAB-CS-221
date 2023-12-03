@@ -63,11 +63,19 @@ function getRandomWord() {
 function updateWordDisplay() {
     const wordDisplayElement = document.getElementById('word-display');
     console.log('Current Word:', currentWord);
-    wordDisplayElement.textContent = currentWord
+
+    // Map each letter in the current word to either the letter or the letter if guessed, otherwise underscore
+    const displayedWord = currentWord
         .split('')
         .map(letter => (guessedLetters.includes(letter) ? letter : '_'))
         .join(' ');
+
+    // Set the content of the HTML element to the updated word
+    wordDisplayElement.innerHTML = displayedWord;
 }
+
+
+
 
 // Function to update the hangman figure based on incorrect guesses
 function updateHangmanFigure() {
