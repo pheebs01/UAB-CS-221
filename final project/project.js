@@ -49,14 +49,14 @@ function getRandomWord() {
     const category = wordCategories[Math.floor(Math.random() * wordCategories.length)];
     console.log('Selected category:', category);
 
-    const selectedWords = words[category];
+    const selectedWords = wordsAndHints[category];
     console.log('Words for the category:', selectedWords);
 
     // Check if there are words in the selected category
-    if (selectedWords && selectedWords.length > 0) {
+    if (selectedWords && selectedWords.words.length > 0) {
         // Return a random word from the chosen category
-        const randomIndex = Math.floor(Math.random() * selectedWords.length);
-        const randomWord = selectedWords[randomIndex];
+        const randomIndex = Math.floor(Math.random() * selectedWords.words.length);
+        const randomWord = selectedWords.words[randomIndex];
         console.log('Selected word:', randomWord);
         return randomWord;
     } else {
@@ -64,6 +64,7 @@ function getRandomWord() {
         return ''; // Return an empty string if no words are found
     }
 }
+
 
 let correctLetters = [];
 let incorrectLetters = [];
