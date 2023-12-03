@@ -73,9 +73,11 @@ function updateWordDisplay() {
 function updateHangmanFigure() {
     const hangmanFigureElement = document.getElementById('hangman-figure');
     console.log('Hangman Figure State:', hangmanFigureState);
-    hangmanFigureElement.innerHTML = '';
 
     const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
+    console.log('Hangman Parts:', hangmanParts);
+
+    hangmanFigureElement.innerHTML = '';
 
     for (let i = 0; i < hangmanFigureState; i++) {
         const part = document.createElement('div');
@@ -112,6 +114,10 @@ function generateLetterButtons() {
     }
 }
 
+
+// Define hangmanParts outside of handleLetterClick
+const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
+
 // Function to handle letter button clicks
 function handleLetterClick(letter) {
     console.log('Clicked letter:', letter);
@@ -119,7 +125,6 @@ function handleLetterClick(letter) {
         guessedLetters.push(letter);
         if (!currentWord.includes(letter)) {
             // Check if the hangman figure is already complete
-            const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
             if (hangmanFigureState < hangmanParts.length) {
                 // Increment hangmanFigureState for incorrect guesses
                 hangmanFigureState++;
@@ -132,6 +137,7 @@ function handleLetterClick(letter) {
         // Add more logic as needed
     }
 }
+
 
 // Function to handle "Get Hint" button click
 document.getElementById('hint-button').addEventListener('click', () => getHint());
