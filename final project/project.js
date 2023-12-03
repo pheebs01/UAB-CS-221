@@ -182,7 +182,7 @@ function handleLetterClick(letter) {
     console.log('Clicked letter:', letter);
 
     // Check if the game has already been won or lost
-    if (hangmanFigureState < hangmanParts.length) {
+    if (hangmanFigureState < hangmanParts.length && displayedWord !== currentWord.toLowerCase()) {
         const lowercaseLetter = letter.toLowerCase(); // Convert the guessed letter to lowercase
 
         if (!guessedLetters.includes(lowercaseLetter) && /^[a-zA-Z]$/.test(letter)) {
@@ -214,10 +214,24 @@ function handleLetterClick(letter) {
                 // All letters have been guessed
                 displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
                 endGame();
+
+                // Disable all letter buttons
+                disableLetterButtons();
             }
         }
     }
 }
+
+// Function to disable all letter buttons
+function disableLetterButtons() {
+    const lettersElement = document.getElementById('letters');
+    const buttons = lettersElement.getElementsByTagName('button');
+
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+    }
+}
+
 
 // Function to handle "Get Hint" button click
 document.getElementById('hint-button').addEventListener('click', () => getHint());
