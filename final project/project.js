@@ -159,16 +159,18 @@ function handleLetterClick(letter) {
 
     // Check if the game has already been won or lost
     if (hangmanFigureState < hangmanParts.length) {
-        if (!guessedLetters.includes(letter) && /^[a-zA-Z]$/.test(letter)) {
-            guessedLetters.push(letter);
+        const lowercaseLetter = letter.toLowerCase(); // Convert the guessed letter to lowercase
+
+        if (!guessedLetters.includes(lowercaseLetter) && /^[a-zA-Z]$/.test(letter)) {
+            guessedLetters.push(lowercaseLetter);
 
             // Check if the guessed letter is incorrect
-            if (!currentWord.includes(letter)) {
+            if (!currentWord.toLowerCase().includes(lowercaseLetter)) {
                 // Increment hangmanFigureState for incorrect guesses
                 hangmanFigureState++;
 
                 // Update incorrectLetters array
-                incorrectLetters.push(letter);
+                incorrectLetters.push(lowercaseLetter);
 
                 // Update the display of incorrect letters
                 updateIncorrectLetters();
@@ -183,7 +185,7 @@ function handleLetterClick(letter) {
             if (hangmanFigureState === hangmanParts.length) {
                 // The hangman figure is complete
                 displayMessage('Game over - Hangman figure complete!');
-            } else if (displayedWord === currentWord) {
+            } else if (displayedWord === currentWord.toLowerCase()) {
                 // All letters have been guessed
                 displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
             }
