@@ -61,6 +61,7 @@ function getRandomWord() {
 
 let correctLetters = [];
 let incorrectLetters = [];
+let displayedWord = '';
 
 // Function to update the displayed word with guessed letters
 function updateWordDisplay() {
