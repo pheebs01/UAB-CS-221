@@ -156,7 +156,7 @@ function handleLetterClick(letter) {
 
     // Check if the game has already been won or lost
     if (hangmanFigureState < hangmanParts.length) {
-        if (!guessedLetters.includes(letter)) {
+        if (!guessedLetters.includes(letter) && /^[a-zA-Z]$/.test(letter)) {
             guessedLetters.push(letter);
 
             // Check if the guessed letter is incorrect
