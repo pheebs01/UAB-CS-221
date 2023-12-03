@@ -184,26 +184,21 @@ function handleLetterClick(letter) {
             if (hangmanFigureState === hangmanParts.length) {
                 // The hangman figure is complete
                 displayMessage('Game over - Hangman figure complete!');
-                // You might want to call a function here to handle end of the game
-                // e.g., gameOver(false);
             } else if (!displayedWord.includes('_')) {
                 // All letters have been guessed
                 displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
-                // You might want to call a function here to handle end of the game
-                // e.g., gameOver(true);
             }
         }
     }
 
-    // Incorporating the logic from the provided function
     if (currentWord.includes(letter)) {
         // Showing all correct letters on the word display
         [...currentWord].forEach((wordLetter, index) => {
             if (wordLetter === letter) {
                 correctLetters.push(letter);
-                updateWordDisplay(); // Update the displayed word with the correct letter
             }
         });
+        updateWordDisplay(); // Update the displayed word with the correct letters
     } else {
         // If clicked letter doesn't exist then update the wrongGuessCount and hangman image
         hangmanFigureState++;
