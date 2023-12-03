@@ -1,17 +1,30 @@
 const wordCategories = ['general', 'animals', 'sports'];
+
+const wordsAndHints = {
+    'general': {
+        hints: 'A broad category',
+        words: ['example', 'hangman', 'project', 'flower', 'computer', 'science', 'final']
+    },
+    'animals': {
+        hints: 'A living organism that typically can move and can feed on organic substances',
+        words: ['elephant', 'tiger', 'giraffe', 'lion', 'bear', 'monkey']
+    },
+    'sports': {
+        hints: 'Physical activities that involve skill and competition',
+        words: ['soccer', 'basketball', 'tennis', 'football', 'gymnastics']
+    },
+    'fashion': {
+        hints: 'Clothing: design, style, type, or article; or pop culture',
+        words: ['sweater', 'argyle', 'pants', 'plaid', 'skirt', 'vogue']
+    }
+};
+
 let currentWord = '';
 let guessedLetters = [];
 let hangmanFigureState = 0;
 let guessCount = 0;
 let timer = 0;
 
-// Hints for each category
-const hints = {
-    'general': 'A broad category',
-    'animals': 'A living organism that typically can move and can feed on organic substances',
-    'sports': 'Physical activities that involve skill and competition',
-    'fashion': 'Clothing: design, style, type, or article; or pop culture'
-};
 
 // Function to start a new game
 function startGame() {
@@ -30,13 +43,6 @@ function startGame() {
     generateLetterButtons();
 }
 
-// Assuming there's a predefined list for each category
-const words = {
-    'general': ['example', 'hangman', 'project', 'flower', 'computer', 'science', 'final'],
-    'animals': ['elephant', 'tiger', 'giraffe', 'lion', 'bear', 'monkey'],
-    'sports': ['soccer', 'basketball', 'tennis', 'football', 'gymnastics'],
-    'fashion': ['sweater', 'argyle', 'pants', 'plaid', 'skirt', 'vogue']
-};
 
 // Function to get a random word from the selected category
 function getRandomWord() {
@@ -86,7 +92,6 @@ function updateWordDisplay() {
         displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
     }
 }
-
 
 // Update incorrectly guessed letters
 function updateIncorrectLetters() {
@@ -193,15 +198,15 @@ function handleLetterClick(letter) {
 // Function to handle "Get Hint" button click
 document.getElementById('hint-button').addEventListener('click', () => getHint());
 
-// Function to get a hint for the current word's category
 function getHint() {
     const category = wordCategories.find(cat => currentWord.includes(cat));
-    if (category && hints.hasOwnProperty(category)) {
-        displayMessage(`Hint: ${hints[category]}`);
+    if (category && wordsAndHints.hasOwnProperty(category)) {
+        displayMessage(`Hint: ${wordsAndHints[category].hints}`);
     } else {
         displayMessage('No hint available for this word.');
     }
 }
+
 
 // Initialize the game
 startGame();
