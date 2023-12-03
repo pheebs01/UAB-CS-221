@@ -200,7 +200,8 @@ function handleLetterClick(letter) {
 document.getElementById('hint-button').addEventListener('click', () => getHint());
 
 function getHint() {
-    const category = wordCategories.find(cat => currentWord.includes(cat));
+    const category = wordCategories.find(cat => wordsAndHints.hasOwnProperty(cat) && wordsAndHints[cat].words.includes(currentWord));
+
     if (category && wordsAndHints.hasOwnProperty(category)) {
         displayMessage(`Hint: ${wordsAndHints[category].hints}`);
     } else {
