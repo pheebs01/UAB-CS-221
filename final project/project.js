@@ -33,6 +33,7 @@ function startGame() {
 // Function to get a random word from the selected category
 function getRandomWord() {
     const category = wordCategories[Math.floor(Math.random() * wordCategories.length)];
+    console.log('Selected category:', category);
 
     // Assuming there's a predefined list for each category
     const words = {
@@ -43,12 +44,15 @@ function getRandomWord() {
     };
 
     const selectedWords = words[category];
+    console.log('Words for the category:', selectedWords);
 
     // Check if there are words in the selected category
     if (selectedWords && selectedWords.length > 0) {
         // Return a random word from the chosen category
         const randomIndex = Math.floor(Math.random() * selectedWords.length);
-        return selectedWords[randomIndex];
+        const randomWord = selectedWords[randomIndex];
+        console.log('Selected word:', randomWord);
+        return randomWord;
     } else {
         console.error('No words found for the selected category.');
         return ''; // Return an empty string if no words are found
@@ -82,7 +86,7 @@ function updateWordDisplay() {
     }
 }
 
-// Add a new function to update incorrectly guessed letters
+// Update incorrectly guessed letters
 function updateIncorrectLetters() {
     const incorrectLettersElement = document.getElementById('incorrect-letters');
     incorrectLettersElement.textContent = `Incorrect Letters: ${incorrectLetters.join(', ')}`;
@@ -124,6 +128,7 @@ function generateLetterButtons() {
         const button = document.createElement('button');
         button.textContent = letter;
         button.addEventListener('click', () => {
+            console.log('Clicked letter button:', letter);
             handleLetterClick(letter);
         });
         lettersElement.appendChild(button);
@@ -147,6 +152,8 @@ setTimeout(() => {
 
 // Function to handle letter button clicks
 function handleLetterClick(letter) {
+    console.log('Clicked letter:', letter);
+
     // Check if the game has already been won or lost
     if (hangmanFigureState < hangmanParts.length) {
         if (!guessedLetters.includes(letter)) {
@@ -171,10 +178,10 @@ function handleLetterClick(letter) {
 
             // Check if the game has been won or lost after the update
             if (hangmanFigureState === hangmanParts.length) {
-                // The hangman figure is complete, handle the game over logic here
+                // The hangman figure is complete
                 displayMessage('Game over - Hangman figure complete!');
             } else if (displayedWord === currentWord) {
-                // All letters have been guessed, handle the game won logic here
+                // All letters have been guessed
                 displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
             }
         }
