@@ -87,6 +87,12 @@ body {
   color: #073200; /* Word display color */
 }
 
+#incorrect-letters {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #FF0000; /* Red color for incorrect letters */
+}
+
 #letters {
   display: flex;
   flex-wrap: wrap;

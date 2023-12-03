@@ -59,6 +59,9 @@ function getRandomWord() {
     }
 }
 
+let correctLetters = [];
+let incorrectLetters = [];
+
 // Function to update the displayed word with guessed letters
 function updateWordDisplay() {
     const wordDisplayElement = document.getElementById('word-display');
@@ -72,8 +75,23 @@ function updateWordDisplay() {
 
     // Set the content of the HTML element to the updated word
     wordDisplayElement.innerHTML = displayedWord;
+
+    // Update correctLetters array with guessed letters
+    correctLetters = currentWord
+        .split('')
+        .filter(letter => guessedLetters.includes(letter));
+
+    // Check if the game has been won
+    if (correctLetters.length === currentWord.length) {
+        displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
+    }
 }
 
+// Add a new function to update incorrectly guessed letters
+function updateIncorrectLetters() {
+    const incorrectLettersElement = document.getElementById('incorrect-letters');
+    incorrectLettersElement.textContent = `Incorrect Letters: ${incorrectLetters.join(', ')}`;
+}
 
 
 
@@ -147,13 +165,19 @@ function handleLetterClick(letter) {
     if (hangmanFigureState < hangmanParts.length) {
         if (!guessedLetters.includes(letter)) {
             guessedLetters.push(letter);
+
+            // Check if the guessed letter is incorrect
             if (!currentWord.includes(letter)) {
-                // Check if the hangman figure is already complete
-                if (hangmanFigureState < hangmanParts.length) {
-                    // Increment hangmanFigureState for incorrect guesses
-                    hangmanFigureState++;
-                }
+                // Increment hangmanFigureState for incorrect guesses
+                hangmanFigureState++;
+
+                // Update incorrectLetters array
+                incorrectLetters.push(letter);
+
+                // Update the display of incorrect letters
+                updateIncorrectLetters();
             }
+
             guessCount++;
             updateWordDisplay();
             updateHangmanFigure();
@@ -164,7 +188,7 @@ function handleLetterClick(letter) {
                 // The hangman figure is complete, handle the game over logic here
                 displayMessage('Game over - Hangman figure complete!');
                 // Add any additional logic you want to execute when the game is over
-            } else if (currentWord.split('').every(letter => guessedLetters.includes(letter))) {
+            } else if (correctLetters.length === currentWord.length) {
                 // All letters have been guessed, handle the game won logic here
                 displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
                 // Add any additional logic you want to execute when the game is won
