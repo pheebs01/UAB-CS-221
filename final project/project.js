@@ -24,6 +24,7 @@ let guessedLetters = [];
 let hangmanFigureState = 0;
 let guessCount = 0;
 let timer = 0;
+let timerInterval; // Variable to store the interval ID
 
 
 // Function to start a new game
@@ -41,6 +42,17 @@ function startGame() {
     updateGuessCount();
     updateTimer();
     generateLetterButtons();
+
+    // Start the timer interval
+    timerInterval = setInterval(() => {
+        timer++;
+        updateTimer();
+    }, 1000); // Increment timer every 1000 milliseconds (1 second)
+}
+
+// Function to end the game and stop the timer
+function endGame() {
+    clearInterval(timerInterval);
 }
 
 
@@ -185,9 +197,11 @@ function handleLetterClick(letter) {
             if (hangmanFigureState === hangmanParts.length) {
                 // The hangman figure is complete
                 displayMessage('Game over - Hangman figure complete!');
+                endGame();
             } else if (displayedWord === currentWord.toLowerCase()) {
                 // All letters have been guessed
                 displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
+                endGame();
             }
         }
     }
