@@ -75,7 +75,7 @@ function updateWordDisplay() {
     const wordDisplayElement = document.getElementById('word-display');
 
     // Map each letter in the current word to either the letter or underscore if not guessed
-    displayedWord = currentWord
+    let displayedWord = currentWord
         .split('')
         .map(letter => (guessedLetters.includes(letter) ? letter : '_'))
         .join(' ');
@@ -83,16 +83,12 @@ function updateWordDisplay() {
     // Set the content of the HTML element to the updated word
     wordDisplayElement.textContent = displayedWord;
 
-    // Update correctLetters array with guessed letters
-    correctLetters = currentWord
-        .split('')
-        .filter(letter => guessedLetters.includes(letter));
-
     // Check if the game has been won
-    if (correctLetters.length === currentWord.length) {
+    if (!displayedWord.includes('_')) {
         displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
     }
 }
+
 
 // Update incorrectly guessed letters
 function updateIncorrectLetters() {
