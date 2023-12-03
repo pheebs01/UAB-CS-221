@@ -81,15 +81,10 @@ function updateWordDisplay() {
         .join(' ');
 
     // Set the content of the HTML element to the updated word
-    wordDisplayElement.textContent = displayedWord;
-
-    // Update correctLetters array with guessed letters
-    correctLetters = currentWord
-        .split('')
-        .filter(letter => guessedLetters.includes(letter));
+    wordDisplayElement.innerHTML = displayedWord.replace(/ /g, '&nbsp;'); // Replace spaces with non-breaking spaces
 
     // Check if the game has been won
-    if (correctLetters.length === currentWord.replace(/ /g, '').length) {
+    if (displayedWord === currentWord) {
         displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
     }
 }
