@@ -119,6 +119,7 @@ function handleLetterClick(letter) {
         guessedLetters.push(letter);
         if (!currentWord.includes(letter)) {
             // Check if the hangman figure is already complete
+            const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
             if (hangmanFigureState < hangmanParts.length) {
                 // Increment hangmanFigureState for incorrect guesses
                 hangmanFigureState++;
