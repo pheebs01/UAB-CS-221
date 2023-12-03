@@ -154,8 +154,8 @@ function generateLetterButtons() {
         button.addEventListener('click', () => {
             console.log('Clicked letter button:', letter);
 
-            // Check if the game has been won
-            if (hangmanFigureState < hangmanParts.length) {
+            // Check if the game has been won or if the word has been correctly guessed
+            if (hangmanFigureState < hangmanParts.length && displayedWord !== currentWord) {
                 handleLetterClick(letter);
                 button.disabled = true; // Disable the button after it's clicked
             }
@@ -175,10 +175,10 @@ function displayMessage(message) {
     messageArea.classList.add('show');
 }
 
-setTimeout(() => {
-    const messageArea = document.getElementById('message-area');
-    messageArea.classList.remove('show');
-}, 3000);
+    setTimeout(() => {
+        const messageArea = document.getElementById('message-area');
+        messageArea.classList.remove('show');
+    }, 3000);
 
 // Function to handle letter button clicks
 function handleLetterClick(letter) {
@@ -234,7 +234,6 @@ function getHint() {
         displayMessage('No hint available for this word.');
     }
 }
-
 
 // Initialize the game
 startGame();
