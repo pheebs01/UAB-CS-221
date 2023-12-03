@@ -4,7 +4,7 @@ body {
 }
 
 #hangman-container {
-  max-width: 700px;
+  max-width: 600px;
   margin: 50px auto;
   padding: 20px;
   background-color: #f0f0f0;
@@ -28,13 +28,13 @@ body {
 
 .hangman-head {
   border-radius: 50%;
-  margin-top: -10px;
+  margin-top: -30px; /* Adjusted for better positioning */
   background-color: #C79B90; /* Head color */
 }
 
 .hangman-body {
   width: 20px;
-  height: 60px;
+  height: 80px; /* Adjusted for better positioning */
   background-color: #9E7E45; /* Body color */
 }
 
@@ -42,10 +42,9 @@ body {
 .hangman-right-arm,
 .hangman-left-leg,
 .hangman-right-leg {
-  width: 30px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: #F5BE00; /* Limb color */
+  width: 5px;
+  height: 30px;
+  background-color: #333; /* Limb color */
 }
 
 .hangman-left-arm,
