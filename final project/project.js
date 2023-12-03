@@ -118,8 +118,11 @@ function handleLetterClick(letter) {
     if (!guessedLetters.includes(letter)) {
         guessedLetters.push(letter);
         if (!currentWord.includes(letter)) {
-            // Increment hangmanFigureState for incorrect guesses
-            hangmanFigureState++;
+            // Check if the hangman figure is already complete
+            if (hangmanFigureState < hangmanParts.length) {
+                // Increment hangmanFigureState for incorrect guesses
+                hangmanFigureState++;
+            }
         }
         guessCount++;
         updateWordDisplay();
@@ -128,6 +131,7 @@ function handleLetterClick(letter) {
         // Add more logic as needed
     }
 }
+
 
 // Function to handle "Get Hint" button click
 document.getElementById('hint-button').addEventListener('click', () => getHint());
