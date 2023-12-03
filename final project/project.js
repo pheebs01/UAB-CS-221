@@ -33,7 +33,6 @@ function startGame() {
 // Function to get a random word from the selected category
 function getRandomWord() {
     const category = wordCategories[Math.floor(Math.random() * wordCategories.length)];
-    console.log('Selected category:', category);
 
     // Assuming there's a predefined list for each category
     const words = {
@@ -44,15 +43,12 @@ function getRandomWord() {
     };
 
     const selectedWords = words[category];
-    console.log('Words for the category:', selectedWords);
 
     // Check if there are words in the selected category
     if (selectedWords && selectedWords.length > 0) {
         // Return a random word from the chosen category
         const randomIndex = Math.floor(Math.random() * selectedWords.length);
-        const randomWord = selectedWords[randomIndex];
-        console.log('Selected word:', randomWord);
-        return randomWord;
+        return selectedWords[randomIndex];
     } else {
         console.error('No words found for the selected category.');
         return ''; // Return an empty string if no words are found
@@ -66,18 +62,22 @@ let incorrectLetters = [];
 function updateWordDisplay() {
     const wordDisplayElement = document.getElementById('word-display');
 
+    // Map each letter in the current word to either the letter or underscore if not guessed
     const displayedWord = currentWord
         .split('')
         .map(letter => (guessedLetters.includes(letter) ? letter : '_'))
         .join(' ');
 
+    // Set the content of the HTML element to the updated word
     wordDisplayElement.textContent = displayedWord;
 
-    // Update incorrect letters display
-    updateIncorrectLetters();
+    // Update correctLetters array with guessed letters
+    correctLetters = currentWord
+        .split('')
+        .filter(letter => guessedLetters.includes(letter));
 
     // Check if the game has been won
-    if (correctLetters.length === currentWord.length) {
+    if (displayedWord === currentWord) {
         displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
     }
 }
@@ -124,7 +124,6 @@ function generateLetterButtons() {
         const button = document.createElement('button');
         button.textContent = letter;
         button.addEventListener('click', () => {
-            console.log('Clicked letter button:', letter);
             handleLetterClick(letter);
         });
         lettersElement.appendChild(button);
@@ -148,8 +147,6 @@ setTimeout(() => {
 
 // Function to handle letter button clicks
 function handleLetterClick(letter) {
-    console.log('Clicked letter:', letter);
-
     // Check if the game has already been won or lost
     if (hangmanFigureState < hangmanParts.length) {
         if (!guessedLetters.includes(letter)) {
@@ -176,11 +173,9 @@ function handleLetterClick(letter) {
             if (hangmanFigureState === hangmanParts.length) {
                 // The hangman figure is complete, handle the game over logic here
                 displayMessage('Game over - Hangman figure complete!');
-                // Add any additional logic you want to execute when the game is over
-            } else if (correctLetters.length === currentWord.length) {
+            } else if (displayedWord === currentWord) {
                 // All letters have been guessed, handle the game won logic here
                 displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
-                // Add any additional logic you want to execute when the game is won
             }
         }
     }
