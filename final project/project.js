@@ -121,22 +121,37 @@ const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'righ
 // Function to handle letter button clicks
 function handleLetterClick(letter) {
     console.log('Clicked letter:', letter);
-    if (!guessedLetters.includes(letter)) {
-        guessedLetters.push(letter);
-        if (!currentWord.includes(letter)) {
-            // Check if the hangman figure is already complete
-            if (hangmanFigureState < hangmanParts.length) {
-                // Increment hangmanFigureState for incorrect guesses
-                hangmanFigureState++;
+
+    // Check if the game has already been won or lost
+    if (hangmanFigureState < hangmanParts.length) {
+        if (!guessedLetters.includes(letter)) {
+            guessedLetters.push(letter);
+            if (!currentWord.includes(letter)) {
+                // Check if the hangman figure is already complete
+                if (hangmanFigureState < hangmanParts.length) {
+                    // Increment hangmanFigureState for incorrect guesses
+                    hangmanFigureState++;
+                }
+            }
+            guessCount++;
+            updateWordDisplay();
+            updateHangmanFigure();
+            updateGuessCount();
+
+            // Check if the game has been won or lost after the update
+            if (hangmanFigureState === hangmanParts.length) {
+                // The hangman figure is complete, handle the game over logic here
+                console.log('Game over - Hangman figure complete!');
+                // Add any additional logic you want to execute when the game is over
+            } else if (currentWord.split('').every(letter => guessedLetters.includes(letter))) {
+                // All letters have been guessed, handle the game won logic here
+                console.log('Congratulations! You guessed the word:', currentWord);
+                // Add any additional logic you want to execute when the game is won
             }
         }
-        guessCount++;
-        updateWordDisplay();
-        updateHangmanFigure();
-        updateGuessCount();
-        // Add more logic as needed
     }
 }
+
 
 
 // Function to handle "Get Hint" button click
