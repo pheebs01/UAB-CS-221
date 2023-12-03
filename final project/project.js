@@ -26,7 +26,6 @@ let guessCount = 0;
 let timer = 0;
 let timerInterval; // Variable to store the interval ID
 
-
 // Function to start a new game
 function startGame() {
     // Reset game state
@@ -63,7 +62,6 @@ function endGame() {
     }
 }
 
-
 // Function to get a random word from the selected category
 function getRandomWord() {
     const category = wordCategories[Math.floor(Math.random() * wordCategories.length)];
@@ -84,7 +82,6 @@ function getRandomWord() {
         return ''; // Return an empty string if no words are found
     }
 }
-
 
 let correctLetters = [];
 let incorrectLetters = [];
