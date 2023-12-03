@@ -65,21 +65,16 @@ let incorrectLetters = [];
 // Function to update the displayed word with guessed letters
 function updateWordDisplay() {
     const wordDisplayElement = document.getElementById('word-display');
-    console.log('Current Word:', currentWord);
 
-    // Map each letter in the current word to either the letter or the letter if guessed, otherwise underscore
     const displayedWord = currentWord
         .split('')
         .map(letter => (guessedLetters.includes(letter) ? letter : '_'))
         .join(' ');
 
-    // Set the content of the HTML element to the updated word
-    wordDisplayElement.innerHTML = displayedWord;
+    wordDisplayElement.textContent = displayedWord;
 
-    // Update correctLetters array with guessed letters
-    correctLetters = currentWord
-        .split('')
-        .filter(letter => guessedLetters.includes(letter));
+    // Update incorrect letters display
+    updateIncorrectLetters();
 
     // Check if the game has been won
     if (correctLetters.length === currentWord.length) {
@@ -93,15 +88,11 @@ function updateIncorrectLetters() {
     incorrectLettersElement.textContent = `Incorrect Letters: ${incorrectLetters.join(', ')}`;
 }
 
-
-
 // Function to update the hangman figure based on incorrect guesses
 function updateHangmanFigure() {
     const hangmanFigureElement = document.getElementById('hangman-figure');
-    console.log('Hangman Figure State:', hangmanFigureState);
 
     const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
-    console.log('Hangman Parts:', hangmanParts);
 
     hangmanFigureElement.innerHTML = '';
 
@@ -114,14 +105,14 @@ function updateHangmanFigure() {
 
 // Function to update the guess count
 function updateGuessCount() {
-    console.log('Guess Count:', guessCount);
-    document.getElementById('guess-count').textContent = guessCount;
+    const guessCountElement = document.getElementById('guess-count');
+    guessCountElement.textContent = guessCount;
 }
 
 // Function to update the timer
 function updateTimer() {
-    console.log('Timer:', timer);
-    document.getElementById('timer').textContent = timer;
+    const timerElement = document.getElementById('timer');
+    timerElement.textContent = timer;
 }
 
 // Function to generate letter buttons dynamically
@@ -140,7 +131,6 @@ function generateLetterButtons() {
     }
 }
 
-
 // Define hangmanParts outside of handleLetterClick
 const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
 
@@ -148,14 +138,13 @@ const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'righ
 function displayMessage(message) {
     const messageArea = document.getElementById('message-area');
     messageArea.textContent = message;
-    messageArea.classList.add('show'); // Add the 'show' class
+    messageArea.classList.add('show');
 }
 
 setTimeout(() => {
     const messageArea = document.getElementById('message-area');
-    messageArea.classList.remove('show'); // Remove the 'show' class
+    messageArea.classList.remove('show');
 }, 3000);
-
 
 // Function to handle letter button clicks
 function handleLetterClick(letter) {
