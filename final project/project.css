@@ -102,3 +102,22 @@ body {
   background-color: #0C5201; /* Hint button color */
   color: #fff; /* Text color for the hint button */
 }
+
+#message-area {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  max-width: 300px;
+  text-align: center;
+}
+
+#message-area.show {
+  display: block;
+}
