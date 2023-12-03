@@ -41,7 +41,6 @@ body {
   background-color: #9E7E45; /* Body color */
 }
 
-
 .hangman-left-arm {
   width: 5px;
   height: 40px;
@@ -76,6 +75,42 @@ body {
   margin-top: -45px;
   transform: rotate(-45deg);
   background-color: #333; /* Limb color */
+}
+
+.hangman-left-eye {
+  width: 5px;
+  height: 40px;
+  margin-left: -45px;
+  margin-top: -50px;
+  transform: rotate(-80deg);
+  background-color: #333;
+}
+
+.hangman-right-eye {
+  width: 5px;
+  height: 40px;
+  margin-left: -45px;
+  margin-top: -50px;
+  transform: rotate(-80deg);
+  background-color: #333;
+}
+
+.hangman-nose {
+  width: 5px;
+  height: 40px;
+  margin-left: -45px;
+  margin-top: -50px;
+  transform: rotate(-80deg);
+  background-color: #333;
+}
+
+.hangman-mouth {
+  width: 5px;
+  height: 40px;
+  margin-left: -45px;
+  margin-top: -50px;
+  transform: rotate(-80deg);
+  background-color: #333;
 }
 
 

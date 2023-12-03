@@ -74,7 +74,7 @@ function updateHangmanFigure() {
     const hangmanFigureElement = document.getElementById('hangman-figure');
     console.log('Hangman Figure State:', hangmanFigureState);
 
-    const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
+    const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg', 'left-eye','right-eye', 'nose', 'mouth'];
     console.log('Hangman Parts:', hangmanParts);
 
     hangmanFigureElement.innerHTML = '';
@@ -116,7 +116,7 @@ function generateLetterButtons() {
 
 
 // Define hangmanParts outside of handleLetterClick
-const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
+const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg', 'left-eye','right-eye', 'nose', 'mouth'];
 
 // Function to handle letter button clicks
 function handleLetterClick(letter) {
