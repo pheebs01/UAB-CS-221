@@ -114,6 +114,7 @@ function generateLetterButtons() {
     }
 }
 
+
 // Define hangmanParts outside of handleLetterClick
 const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
 
@@ -124,7 +125,6 @@ function displayMessage(message) {
     messageArea.classList.add('show'); // Add the 'show' class
 }
 
-// Example of hiding the message area after a delay (e.g., 3 seconds)
 setTimeout(() => {
     const messageArea = document.getElementById('message-area');
     messageArea.classList.remove('show'); // Remove the 'show' class
