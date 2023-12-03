@@ -1,7 +1,7 @@
 const wordCategories = ['general', 'animals', 'sports'];
 let currentWord = '';
 let guessedLetters = [];
-let hangmanFigureState = 0; // To track the hangman figure progression
+let hangmanFigureState = 0;
 let guessCount = 0;
 let timer = 0;
 
@@ -114,9 +114,14 @@ function generateLetterButtons() {
     }
 }
 
-
 // Define hangmanParts outside of handleLetterClick
 const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
+
+// Function to display messages on the main screen
+function displayMessage(message) {
+    const messageArea = document.getElementById('message-area');
+    messageArea.textContent = message;
+}
 
 // Function to handle letter button clicks
 function handleLetterClick(letter) {
@@ -141,18 +146,16 @@ function handleLetterClick(letter) {
             // Check if the game has been won or lost after the update
             if (hangmanFigureState === hangmanParts.length) {
                 // The hangman figure is complete, handle the game over logic here
-                console.log('Game over - Hangman figure complete!');
+                displayMessage('Game over - Hangman figure complete!');
                 // Add any additional logic you want to execute when the game is over
             } else if (currentWord.split('').every(letter => guessedLetters.includes(letter))) {
                 // All letters have been guessed, handle the game won logic here
-                console.log('Congratulations! You guessed the word:', currentWord);
+                displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
                 // Add any additional logic you want to execute when the game is won
             }
         }
     }
 }
-
-
 
 // Function to handle "Get Hint" button click
 document.getElementById('hint-button').addEventListener('click', () => getHint());
@@ -161,9 +164,9 @@ document.getElementById('hint-button').addEventListener('click', () => getHint()
 function getHint() {
     const category = wordCategories.find(cat => currentWord.includes(cat));
     if (category && hints.hasOwnProperty(category)) {
-        alert(`Hint: ${hints[category]}`);
+        displayMessage(`Hint: ${hints[category]}`);
     } else {
-        alert('No hint available for this word.');
+        displayMessage('No hint available for this word.');
     }
 }
 
