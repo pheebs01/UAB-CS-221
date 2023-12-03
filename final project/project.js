@@ -121,7 +121,15 @@ const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'righ
 function displayMessage(message) {
     const messageArea = document.getElementById('message-area');
     messageArea.textContent = message;
+    messageArea.classList.add('show'); // Add the 'show' class
 }
+
+// Example of hiding the message area after a delay (e.g., 3 seconds)
+setTimeout(() => {
+    const messageArea = document.getElementById('message-area');
+    messageArea.classList.remove('show'); // Remove the 'show' class
+}, 3000);
+
 
 // Function to handle letter button clicks
 function handleLetterClick(letter) {
