@@ -53,6 +53,14 @@ function startGame() {
 // Function to end the game and stop the timer
 function endGame() {
     clearInterval(timerInterval);
+
+    // Disable all letter buttons
+    const lettersElement = document.getElementById('letters');
+    const buttons = lettersElement.getElementsByTagName('button');
+
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+    }
 }
 
 
