@@ -107,8 +107,8 @@ body {
 
 #message-area {
   display: none;
-  position: fixed;
-  top: 400px;
+  position: absolute;
+  top: 500px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #573d08;
