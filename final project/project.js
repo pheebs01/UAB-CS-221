@@ -153,8 +153,12 @@ function generateLetterButtons() {
         button.textContent = letter;
         button.addEventListener('click', () => {
             console.log('Clicked letter button:', letter);
-            handleLetterClick(letter);
-            button.disabled = true; // Disable the button after it's clicked
+
+            // Check if the game has been won
+            if (hangmanFigureState < hangmanParts.length) {
+                handleLetterClick(letter);
+                button.disabled = true; // Disable the button after it's clicked
+            }
         });
         lettersElement.appendChild(button);
     }
