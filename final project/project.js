@@ -77,12 +77,12 @@ function updateWordDisplay() {
     wordDisplayElement.textContent = displayedWord;
 
     // Update correctLetters array with guessed letters
-    correctLetters = displayedWord
-        .split(' ')
+    correctLetters = currentWord
+        .split('')
         .filter(letter => guessedLetters.includes(letter));
 
     // Check if the game has been won
-    if (displayedWord === currentWord) {
+    if (correctLetters.length === currentWord.length) {
         displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
     }
 }
