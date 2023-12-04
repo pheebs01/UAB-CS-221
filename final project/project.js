@@ -165,7 +165,11 @@ function generateLetterButtons() {
             console.log('Clicked letter button:', letter);
 
             // Check if the game has been won or if the word has been correctly guessed
-            if (hangmanFigureState < hangmanParts.length && displayedWord !== currentWord) {
+            if (
+                hangmanFigureState < hangmanParts.length &&
+                displayedWord !== currentWord.toLowerCase() &&
+                displayedWord.includes('_') // Check if there are still underscores
+            ) {
                 handleLetterClick(letter);
                 button.disabled = true; // Disable the button after it's clicked
             }
@@ -173,7 +177,6 @@ function generateLetterButtons() {
         lettersElement.appendChild(button);
     }
 }
-
 
 // Define hangmanParts outside of handleLetterClick
 const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
