@@ -196,50 +196,54 @@ function displayMessage(message) {
         messageArea.classList.remove('show');
     }, 3000);
 
-// Function to handle letter button clicks
-function handleLetterClick(letter) {
-    console.log('Clicked letter:', letter);
-
-    // Check if the game has already been won or lost
-    if (hangmanFigureState < hangmanParts.length && displayedWord !== currentWord.toLowerCase()) {
-        const lowercaseLetter = letter.toLowerCase(); // Convert the guessed letter to lowercase
-
-        if (!guessedLetters.includes(lowercaseLetter) && /^[a-zA-Z]$/.test(letter)) {
-            guessedLetters.push(lowercaseLetter);
-
-            // Check if the guessed letter is incorrect
-            if (!currentWord.toLowerCase().includes(lowercaseLetter)) {
-                // Increment hangmanFigureState for incorrect guesses
-                hangmanFigureState++;
-
-                // Update incorrectLetters array
-                incorrectLetters.push(lowercaseLetter);
-
-                // Update the display of incorrect letters
-                updateIncorrectLetters();
-            }
-
-            guessCount++;
-            updateWordDisplay();
-            updateHangmanFigure();
-            updateGuessCount();
-
-            // Check if the game has been won or lost after the update
-            if (hangmanFigureState === hangmanParts.length) {
-                // The hangman figure is complete
-                displayMessage('Game over - Hangman figure complete!');
-                endGame();
-            } else if (displayedWord === currentWord.toLowerCase()) {
-                // All letters have been guessed
-                displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
-                endGame();
-
-                // Disable all letter buttons
-                disableLetterButtons();
+    function handleLetterClick(letter) {
+        console.log('Clicked letter:', letter);
+    
+        // Check if the game has already been won or lost
+        if (hangmanFigureState < hangmanParts.length && displayedWord !== currentWord.toLowerCase()) {
+            const lowercaseLetter = letter.toLowerCase(); // Convert the guessed letter to lowercase
+    
+            if (!guessedLetters.includes(lowercaseLetter) && /^[a-zA-Z]$/.test(letter)) {
+                guessedLetters.push(lowercaseLetter);
+    
+                // Check if the guessed letter is incorrect
+                if (!currentWord.toLowerCase().includes(lowercaseLetter)) {
+                    // Increment hangmanFigureState for incorrect guesses
+                    hangmanFigureState++;
+    
+                    // Update incorrectLetters array
+                    incorrectLetters.push(lowercaseLetter);
+    
+                    // Update the display of incorrect letters
+                    updateIncorrectLetters();
+                }
+    
+                guessCount++;
+                updateWordDisplay();
+                updateHangmanFigure();
+                updateGuessCount();
+    
+                // Debug logging
+                console.log('hangmanFigureState:', hangmanFigureState);
+                console.log('displayedWord:', displayedWord);
+                console.log('currentWord.toLowerCase():', currentWord.toLowerCase());
+    
+                // Check if the game has been won or lost after the update
+                if (hangmanFigureState === hangmanParts.length) {
+                    // The hangman figure is complete
+                    displayMessage('Game over - Hangman figure complete!');
+                    endGame();
+                } else if (displayedWord === currentWord.toLowerCase()) {
+                    // All letters have been guessed
+                    displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
+                    endGame();
+    
+                    // Disable all letter buttons
+                    disableLetterButtons();
+                }
             }
         }
-    }
-}
+    }    
 
 // Function to disable all letter buttons
 function disableLetterButtons() {
