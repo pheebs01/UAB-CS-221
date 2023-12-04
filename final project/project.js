@@ -43,8 +43,8 @@ function startGame() {
     generateLetterButtons();
     resetIncorrectLetters();
     displayMessage("reset");
-
- 
+    clearInterval(timerInterval);
+    setTimer();
 }
 
 function setTimer() {
@@ -97,7 +97,7 @@ let displayedWord = '';
 function updateWordDisplay() {
     const wordDisplayElement = document.getElementById('word-display');
 
-    // Map each letter in the current word to either the letter or underscore if not guessed
+    // Map each letter in the current word to either the letter, underscore, or space if not guessed
     displayedWord = currentWord
         .split('')
         .map(letter => (guessedLetters.includes(letter) ? letter : (letter === ' ' ? ' ' : '_')))
@@ -106,10 +106,10 @@ function updateWordDisplay() {
     // Set the content of the HTML element to the updated word
     wordDisplayElement.innerHTML = displayedWord.replace(/ /g, '&nbsp;'); // Replace spaces with non-breaking spaces
 
-    // Check if the game has been won
-    if (displayedWord === currentWord.toLowerCase()) {
+    // Check if the game has been won by removing the spaces from the displayed word
+    if (displayedWord.replace(/\s+/g, '') == currentWord) {
+        endGame();
         displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
-        disableLetterButtons(); // Disable all letter buttons when the word is correctly guessed
     }
 }
 
@@ -162,29 +162,19 @@ function generateLetterButtons() {
         const letter = String.fromCharCode(i);
         const button = document.createElement('button');
         button.textContent = letter;
+        button.addEventListener('click', () => {
+            console.log('Clicked letter button:', letter);
 
-        // Check if the letter has already been guessed correctly or if the game is over
-        if (guessedLetters.includes(letter.toLowerCase()) || displayedWord === currentWord.toLowerCase()) {
-            button.disabled = true;
-        } else {
-            button.addEventListener('click', () => {
-                console.log('Clicked letter button:', letter);
-
-                // Check if the game has been won or if the word has been correctly guessed
-                if (
-                    hangmanFigureState < hangmanParts.length &&
-                    displayedWord !== currentWord.toLowerCase() &&
-                    displayedWord.includes('_') // Check if there are still underscores
-                ) {
-                    handleLetterClick(letter);
-                    button.disabled = true; // Disable the button after it's clicked
-                }
-            });
-        }
-
+            // Check if the game has been won or if the word has been correctly guessed
+            if (hangmanFigureState < hangmanParts.length && displayedWord !== currentWord) {
+                handleLetterClick(letter);
+                button.disabled = true; // Disable the button after it's clicked
+            }
+        });
         lettersElement.appendChild(button);
     }
 }
+
 
 // Define hangmanParts outside of handleLetterClick
 const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
@@ -207,54 +197,50 @@ function displayMessage(message) {
         messageArea.classList.remove('show');
     }, 3000);
 
-    function handleLetterClick(letter) {
-        console.log('Clicked letter:', letter);
-    
-        // Check if the game has already been won or lost
-        if (hangmanFigureState < hangmanParts.length && displayedWord !== currentWord.toLowerCase()) {
-            const lowercaseLetter = letter.toLowerCase(); // Convert the guessed letter to lowercase
-    
-            if (!guessedLetters.includes(lowercaseLetter) && /^[a-zA-Z]$/.test(letter)) {
-                guessedLetters.push(lowercaseLetter);
-    
-                // Check if the guessed letter is incorrect
-                if (!currentWord.toLowerCase().includes(lowercaseLetter)) {
-                    // Increment hangmanFigureState for incorrect guesses
-                    hangmanFigureState++;
-    
-                    // Update incorrectLetters array
-                    incorrectLetters.push(lowercaseLetter);
-    
-                    // Update the display of incorrect letters
-                    updateIncorrectLetters();
-                }
-    
-                guessCount++;
-                updateWordDisplay();
-                updateHangmanFigure();
-                updateGuessCount();
-    
-                // Debug logging
-                console.log('hangmanFigureState:', hangmanFigureState);
-                console.log('displayedWord:', displayedWord);
-                console.log('currentWord.toLowerCase():', currentWord.toLowerCase());
-    
-                // Check if the game has been won or lost after the update
-                if (hangmanFigureState === hangmanParts.length) {
-                    // The hangman figure is complete
-                    displayMessage('Game over - Hangman figure complete!');
-                    endGame();
-                } else if (displayedWord === currentWord.toLowerCase()) {
-                    // All letters have been guessed
-                    displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
-                    endGame();
-    
-                    // Disable all letter buttons
-                    disableLetterButtons();
-                }
+// Function to handle letter button clicks
+function handleLetterClick(letter) {
+    console.log('Clicked letter:', letter);
+
+    // Check if the game has already been won or lost
+    if (hangmanFigureState < hangmanParts.length && displayedWord !== currentWord.toLowerCase()) {
+        const lowercaseLetter = letter.toLowerCase(); // Convert the guessed letter to lowercase
+
+        if (!guessedLetters.includes(lowercaseLetter) && /^[a-zA-Z]$/.test(letter)) {
+            guessedLetters.push(lowercaseLetter);
+
+            // Check if the guessed letter is incorrect
+            if (!currentWord.toLowerCase().includes(lowercaseLetter)) {
+                // Increment hangmanFigureState for incorrect guesses
+                hangmanFigureState++;
+
+                // Update incorrectLetters array
+                incorrectLetters.push(lowercaseLetter);
+
+                // Update the display of incorrect letters
+                updateIncorrectLetters();
+            }
+
+            guessCount++;
+            updateWordDisplay();
+            updateHangmanFigure();
+            updateGuessCount();
+
+            // Check if the game has been won or lost after the update
+            if (hangmanFigureState === hangmanParts.length) {
+                // The hangman figure is complete
+                displayMessage('Game over - Hangman figure complete!');
+                endGame();
+            } else if (displayedWord.toLowerCase() === currentWord.toLowerCase()) {
+                // All letters have been guessed
+                displayMessage(`Congratulations! You guessed the word: ${currentWord}`);
+                endGame();
+
+                // Disable all letter buttons
+                disableLetterButtons();
             }
         }
-    }    
+    }
+}
 
 // Function to disable all letter buttons
 function disableLetterButtons() {
@@ -271,7 +257,6 @@ function disableLetterButtons() {
 document.getElementById('hint-button').addEventListener('click', () => getHint());
 // Function to handle "Reset" button click
 document.getElementById('reset-button').addEventListener('click', () => startGame());
-
 function getHint() {
     const category = wordCategories.find(cat => wordsAndHints.hasOwnProperty(cat) && wordsAndHints[cat].words.includes(currentWord));
 
@@ -284,4 +269,3 @@ function getHint() {
 
 // Initialize the game
 startGame();
-setTimer();
