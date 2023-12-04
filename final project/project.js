@@ -161,19 +161,26 @@ function generateLetterButtons() {
         const letter = String.fromCharCode(i);
         const button = document.createElement('button');
         button.textContent = letter;
-        button.addEventListener('click', () => {
-            console.log('Clicked letter button:', letter);
+        
+        // Check if the letter has already been guessed correctly
+        if (guessedLetters.includes(letter.toLowerCase())) {
+            button.disabled = true;
+        } else {
+            button.addEventListener('click', () => {
+                console.log('Clicked letter button:', letter);
 
-            // Check if the game has been won or if the word has been correctly guessed
-            if (
-                hangmanFigureState < hangmanParts.length &&
-                displayedWord !== currentWord.toLowerCase() &&
-                displayedWord.includes('_') // Check if there are still underscores
-            ) {
-                handleLetterClick(letter);
-                button.disabled = true; // Disable the button after it's clicked
-            }
-        });
+                // Check if the game has been won or if the word has been correctly guessed
+                if (
+                    hangmanFigureState < hangmanParts.length &&
+                    displayedWord !== currentWord.toLowerCase() &&
+                    displayedWord.includes('_') // Check if there are still underscores
+                ) {
+                    handleLetterClick(letter);
+                    button.disabled = true; // Disable the button after it's clicked
+                }
+            });
+        }
+
         lettersElement.appendChild(button);
     }
 }
