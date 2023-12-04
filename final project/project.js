@@ -41,6 +41,8 @@ function startGame() {
     updateGuessCount();
     updateTimer();
     generateLetterButtons();
+    resetIncorrectLetters();
+    displayMessage("reset");
 
     // Start the timer interval
     timerInterval = setInterval(() => {
@@ -168,8 +170,14 @@ const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'righ
 // Function to display messages on the main screen
 function displayMessage(message) {
     const messageArea = document.getElementById('message-area');
-    messageArea.textContent = message;
-    messageArea.classList.add('show');
+    // Allows the reset button to remove the display area
+     if(message == "reset") {
+        messageArea.style.visibility = "hidden";
+    } else { 
+        messageArea.style.visibility = "visible"; 
+        messageArea.textContent = message;
+        messageArea.classList.add('show');
+    }
 }
 
     setTimeout(() => {

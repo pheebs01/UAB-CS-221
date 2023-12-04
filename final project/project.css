@@ -111,6 +111,14 @@ body {
   color: #fff; /* Text color for the hint button */
 }
 
+#reset-button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #872405; /* Reset button color */
+  color: #fff; /* Text color for the reset button */
+}
+
 #message-area {
   display: none;
   position: absolute;
