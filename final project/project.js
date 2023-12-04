@@ -44,6 +44,10 @@ function startGame() {
     resetIncorrectLetters();
     displayMessage("reset");
 
+ 
+}
+
+function setTimer() {
     // Start the timer interval
     timerInterval = setInterval(() => {
         timer++;
@@ -112,6 +116,13 @@ function updateWordDisplay() {
 function updateIncorrectLetters() {
     const incorrectLettersElement = document.getElementById('incorrect-letters');
     incorrectLettersElement.textContent = `Incorrect Letters: ${incorrectLetters.join(', ')}`;
+}
+
+// Reset the incorrect letters list
+function resetIncorrectLetters() {
+    const incorrectLettersElement = document.getElementById('incorrect-letters');
+    incorrectLettersElement.textContent = ``;
+    incorrectLetters = [];
 }
 
 // Function to update the hangman figure based on incorrect guesses
@@ -243,6 +254,8 @@ function disableLetterButtons() {
 
 // Function to handle "Get Hint" button click
 document.getElementById('hint-button').addEventListener('click', () => getHint());
+// Function to handle "Reset" button click
+document.getElementById('reset-button').addEventListener('click', () => startGame());
 
 function getHint() {
     const category = wordCategories.find(cat => wordsAndHints.hasOwnProperty(cat) && wordsAndHints[cat].words.includes(currentWord));
@@ -256,3 +269,4 @@ function getHint() {
 
 // Initialize the game
 startGame();
+setTimer();
