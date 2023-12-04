@@ -97,6 +97,10 @@ function resetIncorrectLetters() {
     incorrectLetters = [];
 }
 
+// Define hangmanParts outside of handleLetterClick
+const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
+
+
 // Function to update the hangman figure based on incorrect guesses
 function updateHangmanFigure() {
     const hangmanFigureElement = document.getElementById('hangman-figure');
@@ -145,10 +149,6 @@ function generateLetterButtons() {
         lettersElement.appendChild(button);
     }
 }
-
-
-// Define hangmanParts outside of handleLetterClick
-const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
 
 // Function to display messages on the main screen
 function displayMessage(message) {
