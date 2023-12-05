@@ -65,6 +65,7 @@ const wordList = [
     {word: "nostalgia", hint: "A sentimental longing or wistful affection for the past."},
     {word: "brilliant", hint: "Exceptionally clever, talented, or impressive."}, ];
 
+// Variables to store game state
 let currentWord = '';
 let guessedLetters = [];
 let hangmanFigureState = 0;
