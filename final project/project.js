@@ -1,5 +1,7 @@
 import { wordList } from './words.js';
 
+// Define hangmanParts outside of handleLetterClick
+const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
 
 // Function to get a random word from the wordList
 function getRandomWord() {
@@ -143,10 +145,6 @@ function generateLetterButtons() {
         lettersElement.appendChild(button);
     }
 }
-
-
-// Define hangmanParts outside of handleLetterClick
-const hangmanParts = ['head', 'body', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
 
 // Function to display messages on the main screen
 function displayMessage(message) {
