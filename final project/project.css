@@ -1,15 +1,29 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "proxima-nova", sans-serif;
   text-align: center;
-  background-color: #073200;
+  background-color: #0f5b04ce;
+  font-weight: 400;
+  font-style: normal;
+}
 
+#title {
+
+  margin: 50px auto;
+  align-self: center;
+  background-color: #daa520;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 25px;
+  align-content: center;
+  margin: -35px;
+  color: #0f5b04ce;
 }
 
 #hangman-container {
   max-width: 500px;
   margin: 50px auto;
   padding: 20px;
-  background-color: #deac00;
+  background-color: #daa520;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -33,14 +47,16 @@ body {
   margin-top: 10px;
   width: 35px;
   height: 35px;
-  background-color: #000000; /* Head color */
+  background-color: #000000;
+  /* Head color */
 }
 
 .hangman-body {
   width: 10px;
   height: 50px;
   margin-top: -5px;
-  background-color: #000000; /* Body color */
+  background-color: #000000;
+  /* Body color */
 }
 
 .hangman-left-arm {
@@ -49,7 +65,16 @@ body {
   margin-left: -45px;
   margin-top: -50px;
   transform: rotate(-80deg);
-  background-color: #000000; /* Limb color */  
+  background-color: #000000;
+  /* Limb color */
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
 }
 
 .hangman-right-arm {
@@ -58,7 +83,8 @@ body {
   margin-left: 54px;
   margin-top: -45px;
   transform: rotate(80deg);
-  background-color: #000000; /* Limb color */
+  background-color: #000000;
+  /* Limb color */
 }
 
 .hangman-left-leg {
@@ -67,7 +93,8 @@ body {
   margin-top: -10px;
   margin-left: -30px;
   transform: rotate(45deg);
-  background-color: #000000; /* Limb color */
+  background-color: #000000;
+  /* Limb color */
 }
 
 .hangman-right-leg {
@@ -76,7 +103,8 @@ body {
   margin-left: 40px;
   margin-top: -45px;
   transform: rotate(-45deg);
-  background-color: #000000; /* Limb color */
+  background-color: #000000;
+  /* Limb color */
 }
 
 
@@ -84,13 +112,15 @@ body {
 #word-display {
   margin: 20px 0;
   font-size: 24px;
-  color: #073200; /* Word display color */
+  color: #073200;
+  /* Word display color */
 }
 
 #incorrect-letters {
   margin-top: 10px;
   font-size: 18px;
-  color: #FF0000; /* Red color for incorrect letters */
+  color: #FF0000;
+  /* Red color for incorrect letters */
 }
 
 #letters {
@@ -107,22 +137,26 @@ body {
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #0C5201; /* Hint button color */
-  color: #fff; /* Text color for the hint button */
+  background-color: #0C5201;
+  /* Hint button color */
+  color: #fff;
+  /* Text color for the hint button */
 }
 
 #reset-button {
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #872405; /* Reset button color */
-  color: #fff; /* Text color for the reset button */
+  background-color: #872405;
+  /* Hint button color */
+  color: #fff;
+  /* Text color for the hint button */
 }
 
 #message-area {
   display: none;
   position: absolute;
-  top: 500px;
+  top: 570px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #573d08;
@@ -137,4 +171,50 @@ body {
 
 #message-area.show {
   display: block;
+
+}
+
+/* Light & Dark Mode Configurations */
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.dark-mode {
+  background-color: #1e1704;
+  color: #1e1704
+}
+
+svg:hover path {
+  fill: #f5f5f5;
+  transition-duration: 0.4s;
+  size-adjust: 1.5x;
+}
+
+#darkButton {
+
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition-duration: 0.1s;
+  padding: 80px;
+
+}
+
+#title.titledark-mode {
+
+  margin: 50px auto;
+  align-self: center;
+  background-color: #daa520;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 25px;
+  align-content: center;
+  margin: -35px;
+  color: #1e1704;
 }
