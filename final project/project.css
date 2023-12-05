@@ -154,6 +154,12 @@ body {
   /* Text color for the hint button */
 }
 
+#hint-button:hover,
+#reset-button:hover {
+  background-color: #521b61;
+  color: #fff;
+}
+
 #message-area {
   display: none;
   position: absolute;
