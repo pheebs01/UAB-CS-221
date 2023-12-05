@@ -198,7 +198,7 @@ svg:hover path {
   background-color: transparent; /* Set a transparent background for the dark mode button */
   border: none; /* Remove border from the dark mode button */
   transition-duration: 0.2s; /* Set transition duration for smooth effect */
-  padding: 80px; /* Set padding for the dark mode button */
+  padding: 105px; /* Set padding for the dark mode button */
 }
 
 /* Styling for Title in Dark Mode */
