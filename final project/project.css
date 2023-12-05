@@ -20,7 +20,7 @@ body {
 }
 
 #hangman-container {
-  max-width: 700px;
+  max-width: 650px;
   margin: 50px auto;
   padding: 60px;
   background-color: #daa520;
@@ -156,7 +156,7 @@ body {
 #message-area {
   display: none;
   position: absolute;
-  top: 670px;
+  top: 650px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #573d08;
@@ -203,7 +203,6 @@ svg:hover path {
   border: none;
   transition-duration: 0.2s;
   padding: 90px;
-  margin-top: 40px;
 
 }
 
