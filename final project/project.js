@@ -1,20 +1,23 @@
-const wordList = [
-    {
-        word: "guitar",
-        hint: "A musical instrument with strings."
+const wordCategories = ['general', 'animals', 'sports', 'fashion'];
+
+const wordsAndHints = {
+    'general': {
+        hints: 'A broad category.',
+        words: ['example', 'hangman', 'project', 'flower', 'computer', 'science', 'final']
     },
-    {
-        word: "oxygen",
-        hint: "A colorless, odorless gas essential for life."
+    'animals': {
+        hints: 'A living organism that typically can move and can feed on organic substances',
+        words: ['elephant', 'tiger', 'giraffe', 'lion', 'bear', 'monkey']
     },
-    {
-        word: "mountain",
-        hint: "A large natural elevation of the Earth's surface."
+    'sports': {
+        hints: 'A Physical activity that involving skill and competition.',
+        words: ['soccer', 'basketball', 'tennis', 'football', 'gymnastics']
     },
-    {
-        word: "painting",
-        hint: "An art form using colors on a surface to create images or expression."
-    }]
+    'fashion': {
+        hints: 'Clothing: design, style, type, or article; or pop culture.',
+        words: ['sweater', 'argyle', 'pants', 'plaid', 'skirt', 'vogue']
+    }
+};
 
 let currentWord = '';
 let guessedLetters = [];
@@ -65,11 +68,25 @@ function endGame() {
     }
 }
 
-// Function to get a random word from the wordList
+// Function to get a random word from the selected category
 function getRandomWord() {
-    const randomIndex = Math.floor(Math.random() * wordList.length);
-    console.log('Selected word:', wordList[randomIndex].word);
-    return wordList[randomIndex].word;
+    const category = wordCategories[Math.floor(Math.random() * wordCategories.length)];
+    console.log('Selected category:', category);
+
+    const selectedWords = wordsAndHints[category];
+    console.log('Words for the category:', selectedWords);
+
+    // Check if there are words in the selected category
+    if (selectedWords && selectedWords.words.length > 0) {
+        // Return a random word from the chosen category
+        const randomIndex = Math.floor(Math.random() * selectedWords.words.length);
+        const randomWord = selectedWords.words[randomIndex];
+        console.log('Selected word:', randomWord);
+        return randomWord;
+    } else {
+        console.error('No words found for the selected category.');
+        return ''; // Return an empty string if no words are found
+    }
 }
 
 let correctLetters = [];
