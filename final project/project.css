@@ -22,7 +22,7 @@ body {
 #hangman-container {
   max-width: 650px;
   margin: 50px auto;
-  padding: 60px;
+  padding: 15px;
   background-color: #daa520;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -119,6 +119,7 @@ body {
 #incorrect-letters {
   margin-top: 10px;
   font-size: 18px;
+  padding: 10px;
   color: #FF0000;
   /* Red color for incorrect letters */
 }
@@ -126,7 +127,7 @@ body {
 #letters {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 10px;
 }
 
 #game-info {
@@ -156,7 +157,7 @@ body {
 #message-area {
   display: none;
   position: absolute;
-  top: 650px;
+  top: 590px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #573d08;
@@ -202,7 +203,7 @@ svg:hover path {
   background-color: transparent;
   border: none;
   transition-duration: 0.2s;
-  padding: 90px;
+  padding: 80px;
 
 }
 
